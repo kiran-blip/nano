@@ -1,0 +1,17 @@
+.margin-container {
+  width: 50%;
+  margin: auto;
+}
+
+.img-carousel-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: lightgrey;
+}
+
+.top-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
