@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @user_activity %>
+
+<div>
+  <%= link_to "Edit this user activity", edit_user_activity_path(@user_activity) %> |
+  <%= link_to "Back to user activities", user_activities_path %>
+
+  <%= button_to "Destroy this user activity", @user_activity, method: :delete %>
+</div>
