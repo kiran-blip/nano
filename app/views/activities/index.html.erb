@@ -1,9 +1,93 @@
 <div class="margin-container">
 
-  <!-- filter and search section -->
-  <div class="container">
-    <div class="search-bar">
-      <div class ="search-btn">
+
+
+<div>
+  <ul>
+    <% @activities.each do |activity| %>
+      <li><%= link_to activity.name, activity_path(activity) %></li>
+    <% end %>
+
+  </ul>
+</div>
+
+<%= link_to "New Activity", new_activity_path %>
+
+
+<!-- navbar -->
+<div class="nav-bar">
+<!-- add things in here -->
+</div>
+<!-- /navbar -->
+
+
+<!-- header -->
+<div class="container">
+  <img src="" alt="">
+    <h1>Nano</h1>
+</div>
+<!-- /header -->
+
+
+<!-- filter and search section -->
+<div class="container">
+  <div class="search-bar">
+    <div class ="search-btn">
+    </div>
+  </div>
+  <div class="filter">
+    <i class="fa-solid fa-arrow-up-wide-short"></i>
+    <h2>filter</h2>
+  </div>
+</div>
+<!-- /filter and search section -->
+
+<!-- index area -->
+<div class="container">
+  <div class="margin-container">
+
+<!-- make a card -->
+    <div class="card">
+      <img src="" alt="">
+      <div class="info">
+      <p></p>
+      </div>
+    </div>
+
+
+<!-- make a card -->
+    <div class="card">
+      <img src="" alt="">
+      <div class="info">
+      <p></p>
+      </div>
+    </div>
+
+
+<!-- make a card -->
+    <div class="card">
+      <img src="" alt="">
+      <div class="info">
+      <p></p>
+      </div>
+    </div>
+
+
+<!-- make a card -->
+    <div class="card">
+      <img src="" alt="">
+      <div class="info">
+      <p></p>
+      </div>
+    </div>
+
+
+<!-- make a card -->
+    <div class="card">
+      <img src="" alt="">
+      <div class="info">
+      <p></p>
+
       </div>
     </div>
     <div class="filter">
