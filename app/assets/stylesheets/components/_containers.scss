@@ -1,3 +1,66 @@
+.logosearch-container {
+  background-color: rgb(85, 24, 191);
+
+
+  .lettering-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 50px 0;
+
+    h1 {
+      color: yellow;
+    }
+    p {
+      color: white;
+
+    }
+  }
+}
+
+.happeningtonight-container {
+  background-color: #f3f1f1;
+  padding: 25px 25px 75px;
+  .text1 {
+    // margin: 25px 25px 75px;
+  }
+
+}
+
+.explore-container {
+  li {
+    list-style: none;
+  }
+}
+
+
+
+.nearme-container {
+  text-align: center;
+  background-color: white;
+}
+
+.explore-container {
+
+
+  .category-text {
+    text-align: center;
+  }
+
+  .categories-container{
+    margin: auto;
+    width: 50%;
+    ul {
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    li {
+      min-width: 25%;
+    }
+  }
+
 .margin-container {
   width: 50%;
   margin: auto;
