@@ -5,7 +5,14 @@ class ActivitiesController < ApplicationController
   end
 
   def show
+    @activities = Activity.all
     @activity = Activity.find(params[:id])
+    @markers = @activities.geocoded.map do |a|
+      {
+        lat: @activity.latitude,
+        lng: @activity.longitude
+      }
+    end
   end
 
   def new
