@@ -7,4 +7,5 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 User.create!(first_name:"John", last_name:"Doe", email:"kiran@x.com", password: "123456")
+
 Activity.create!(name: "bowling", user_id: 1)
