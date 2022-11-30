@@ -1,10 +1,33 @@
-.img-carousel {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.carousel-cell {
+  width:33%;
+  height:400px;
+  display: inline-block;
+  margin: 0 15px;
+  border: 3px solid #4107a6;
+  overflow: hidden;
 
+}
+
+.carousel-cell img{
   width: 100%;
-  padding-top: 100%; // 1:1 aspect ratio hack
+  height: 400px;
+  object-fit: cover;
+}
 
-  background-color: #dddddd;
+
+.carousel-cell-show {
+  width: 100%; /* full width */
+  height: 700px;
+  /* center images in cells with flexbox */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+
+.carousel-cell-show img {
+  width: 100%;
+  height: 700px;
+  object-fit: cover;
 }
