@@ -1,5 +1,5 @@
-.logosearch-container {
-  background-color: rgb(85, 24, 191);
+.logo-search-container {
+  background-color: white;
 
 
   .lettering-container {
@@ -9,18 +9,15 @@
     padding: 50px 0;
 
     h1 {
-      color: yellow;
+      font-size: 100px;
     }
     p {
-      color: white;
-
+      color: black;
     }
   }
 }
 
 .happeningtonight-container {
-
-  background-color: #f3f1f1;
   padding: 25px 25px 75px;
 
   .card-container-carousel {
@@ -36,16 +33,6 @@
       border-radius: 5px;
       margin-right: 40px;
     }
-  }
-}
-
-.nearme-container {
-  text-align: center;
-  background-color: white;
-
-  .map {
-    background-color: black;
-    margin: 0 200px;
   }
 }
 
@@ -87,7 +74,7 @@
 }
 
 .margin-container {
-  width: 50%;
+  width: 60%;
   margin: auto;
 }
 
@@ -96,18 +83,11 @@
   justify-content: space-between;
   flex-direction: row;
   width: 100%;
+  margin: 0;
 }
 
 .half-container {
   display: flex;
-}
-
-.img-carousel-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  width: 50%;
-  background-color: white;
 }
 
 .activity-info-container {
@@ -115,39 +95,4 @@
   padding: 50px;
   padding-top: 100px;
   background-color: white;
-}
-
-.reviews-container {
-  padding-top: 50px;
-}
-
-.review-container {
-  background-color: white;
-  border-radius: 8px;
-
-  padding: 20px;
-  margin: 10px;
-}
-
-.map-container {
-  width: 100%;
-  height: 240px;
-
-  background-color: #dddddd;
-}
-
-.carousel-cell {
-  width:33%;
-  height:400px;
-  display: inline-block;
-  margin: 0 15px;
-  border: 3px solid #4107a6;
-  overflow: hidden;
-
-}
-
-.carousel-cell img{
-  width: 100%;
-  height: 400px;
-  object-fit: cover;
 }

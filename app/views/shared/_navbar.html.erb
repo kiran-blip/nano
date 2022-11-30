@@ -11,8 +11,12 @@
         <%= link_to "Browse", activities_path, class: "nav-link" %>
       </li>
 
-      <%= link_to "root", class: "navbar-brand" do %>
+      <!--<%= link_to "root", class: "navbar-brand" do %>
         <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
+      <% end %>-->
+
+      <%= link_to root_path, class: "navbar-brand" do %>
+        <h2>nano</h2>
       <% end %>
 
       <% if user_signed_in? %>
