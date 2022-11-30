@@ -27,22 +27,12 @@
 
 }
 
-.explore-container {
-  li {
-    list-style: none;
-  }
-}
-
-
-
 .nearme-container {
   text-align: center;
   background-color: white;
 }
 
 .explore-container {
-
-
   .category-text {
     text-align: center;
   }
@@ -58,8 +48,10 @@
 
     li {
       min-width: 25%;
+      list-style: none;
     }
   }
+}
 
 .margin-container {
   width: 50%;
