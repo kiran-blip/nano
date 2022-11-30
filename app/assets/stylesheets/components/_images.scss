@@ -1,3 +1,15 @@
+.carousel-container-show {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 50%;
+  background-color: white;
+}
+
+.carousel-show {
+  width: 50%;
+}
+
 .carousel-cell {
   width:15%;
   height:275px;
@@ -13,7 +25,6 @@
   height: 275px;
   object-fit: cover;
 }
-
 
 .carousel-cell-show {
   width: 100%; /* full width */
