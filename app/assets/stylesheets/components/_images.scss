@@ -28,7 +28,7 @@
 
 .carousel-cell-show {
   width: 100%; /* full width */
-  height: 400px;
+  height: 750px;
   /* center images in cells with flexbox */
   display: flex;
   align-items: center;
@@ -45,4 +45,10 @@
 
 .flickity-button {
   background: transparent;
+}
+
+.icard img{
+  width: 100%;
+  height: 75%;
+  object-fit: cover;
 }

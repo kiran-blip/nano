@@ -1,0 +1,14 @@
+.cards-index {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: space-between;
+}
+
+.icard {
+  width: calc(25% - 10px);
+  margin: 5px;
+  height: calc(25vw - 10px);
+
+  // margin-bottom: 10px;
+}
