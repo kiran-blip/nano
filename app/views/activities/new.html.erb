@@ -8,7 +8,10 @@
   <%= simple_form_for(@activity) do |f| %>
     <%= f.input :name %>
     <%= f.input :description %>
-    <%= f.input :tag %>
+    <%= f.input :tag,
+    collection: Tag.all,
+    input_html: {multiple: true, data: {controller: "tom-select"}},
+    include_hidden: false %>
     <%= f.input :price %>
     <%= f.input :free, as: :boolean, checked_value: 'positive', unchecked_value: 'negative' %>
     <%= f.input :location %>
