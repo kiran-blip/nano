@@ -1,0 +1,25 @@
+<div class="new-activity form-container">
+  <div class="logo-title-container">
+  <h1>New Activity</h1>
+    <div class="icon-container">
+      <%= image_tag "", alt: "Logo" %>
+    </div>
+  </div>
+  <%= simple_form_for(@activity) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :description %>
+    <%= f.input :tag %>
+    <%= f.input :price %>
+    <%= f.input :free, as: :boolean, checked_value: 'positive', unchecked_value: 'negative' %>
+    <%= f.input :location %>
+    <%= f.input :photo, as: :file %>
+    <%= f.input :start, as: :date, html5: true  %>
+    <%= f.input :end, as: :date, html5: true %>
+    <%= f.input :venue %>
+    <%= f.input :booking, as: :boolean, checked_value: 'positive', unchecked_value: 'negative' %>
+    <div class="form-actions btn-container">
+      <%= f.button :submit, "Create Activity", class: "button-primary" %>
+    </div>
+  <% end %>
+
+</div>
