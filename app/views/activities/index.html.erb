@@ -1,5 +1,4 @@
-<div class="margin-container">
-
+<h1>Activities </h1>
 
 
 <div>
@@ -13,6 +12,7 @@
 
 <%= link_to "New Activity", new_activity_path %>
 
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -20,7 +20,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
 <body>
-
 
 <!-- navbar -->
 <div class="nav-bar">
@@ -124,18 +123,7 @@
       <p> look an activity!</p>
       </div>
     </div>
-  </div>
-  <!-- /filter and search section -->
 
-
-<!-- make a icard card -->
-    <div class="icard card">
-      <img src="https://ksassets.timeincuk.net/wp/uploads/sites/55/2011/06/MumfordGlastonburyTOX240611_0-4.jpg" alt="">
-      <div class="info">
-      <p> look an activity!</p>
-      </div>
-    </div>
-  </div>
 
 <!-- make a icard card -->
     <div class="icard card">
@@ -161,20 +149,17 @@
       </div>
     </div>
 
-  <h1>Activities </h1>
-
-  <div>
-    <ul>
-      <% @activities.each do |activity| %>
-        <li><%= link_to activity.name, activity_path(activity) %></li>
-      <% end %>
-    </ul>
+<!-- make a icard card -->
+    <div class="icard card">
+      <img src="https://ksassets.timeincuk.net/wp/uploads/sites/55/2011/06/MumfordGlastonburyTOX240611_0-4.jpg" alt="">
+      <div class="info">
+      <p> look an activity!</p>
+      </div>
+    </div>
 
   </div>
-
-  <%= link_to "New Activity", new_activity_path %>
-
 </div>
+<!-- /index area-->
 
 
-<iframe width='100%' height='400px' src="https://api.mapbox.com/styles/v1/kiranjaimon/clb3t88ao000814o3t3tl52u7.html?title=false&access_token=pk.eyJ1Ijoia2lyYW5qYWltb24iLCJhIjoiY2xiM2t3YW92MGE1cTN3bXR2cXI3a2xzaiJ9.lRdocb8U5mw1CVf3mW7BpQ&zoomwheel=false#11/48.138/11.575" title="Navigation" style="border:none;"></iframe>
+</body>
