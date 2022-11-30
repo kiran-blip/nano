@@ -1,7 +1,12 @@
 class ActivitiesController < ApplicationController
-
   def index
-    @activities = Activity.all
+    # raise
+    # params[:query]
+    if params[:query].nil?
+      @activities = Activity.all
+    else
+      @activities = Activity.search_by_name_and_description_and_tag_and_location_and_venue(params[:query])
+    end
   end
 
   def show
@@ -32,6 +37,6 @@ class ActivitiesController < ApplicationController
   private
 
   def activity_params
-    params.require(:activity).permit(:name, :description, :location)
+    params.require(:activity).permit(:name, :description, :location, :tag, :price, :venue, :photo)
   end
 end
