@@ -3,9 +3,8 @@
   justify-content: center;
   align-items: center;
 
-  height: 240px;
-  width: 240px;
-  margin: 20px;
+  width: 100%;
+  padding-top: 100%; // 1:1 aspect ratio hack
 
-  background-color: grey;
+  background-color: #dddddd;
 }
