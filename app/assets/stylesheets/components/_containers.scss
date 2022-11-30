@@ -30,16 +30,23 @@
 .nearme-container {
   text-align: center;
   background-color: white;
+
+  .map {
+    background-color: black;
+    margin: 0 200px;
+
+  }
+
 }
 
 .explore-container {
+
   .category-text {
     text-align: center;
   }
 
   .categories-container{
-    margin: auto;
-    width: 50%;
+    // margin: auto;
     ul {
       margin: 0 auto;
       display: flex;
