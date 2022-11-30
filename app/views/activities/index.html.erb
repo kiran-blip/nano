@@ -1,4 +1,5 @@
-<h1>Activities </h1>
+<div class="margin-container">
+
 
 
 <div>
@@ -86,48 +87,38 @@
       <img src="" alt="">
       <div class="info">
       <p></p>
+
       </div>
     </div>
-
-
-<!-- make a card -->
-    <div class="card">
-      <img src="" alt="">
-      <div class="info">
-      <p></p>
-      </div>
+    <div class="filter">
+      <i class="fa-solid fa-arrow-up-wide-short"></i>
+      <h2>filter</h2>
     </div>
-
-
-<!-- make a card -->
-    <div class="card">
-      <img src="" alt="">
-      <div class="info">
-      <p></p>
-      </div>
-    </div>
-
-
-<!-- make a card -->
-    <div class="card">
-      <img src="" alt="">
-      <div class="info">
-      <p></p>
-      </div>
-    </div>
-
-
-<!-- make a card -->
-    <div class="card">
-      <img src="" alt="">
-      <div class="info">
-      <p></p>
-      </div>
-    </div>
-
   </div>
+  <!-- /filter and search section -->
+
+  <div class="container">
+    <div class="card">
+      <img src="" alt="">
+      <div class="info">
+      <p></p>
+      </div>
+    </div>
+  </div>
+
+  <h1>Activities </h1>
+
+  <div>
+    <ul>
+      <% @activities.each do |activity| %>
+        <li><%= link_to activity.name, activity_path(activity) %></li>
+      <% end %>
+    </ul>
+  </div>
+
+  <%= link_to "New Activity", new_activity_path %>
+
 </div>
-<!-- /index area-->
 
 
-</body>
+<iframe width='100%' height='400px' src="https://api.mapbox.com/styles/v1/kiranjaimon/clb3t88ao000814o3t3tl52u7.html?title=false&access_token=pk.eyJ1Ijoia2lyYW5qYWltb24iLCJhIjoiY2xiM2t3YW92MGE1cTN3bXR2cXI3a2xzaiJ9.lRdocb8U5mw1CVf3mW7BpQ&zoomwheel=false#11/48.138/11.575" title="Navigation" style="border:none;"></iframe>
