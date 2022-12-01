@@ -31,6 +31,7 @@
       <% @activities.each do |activity| %>
         <a href="<%= activity_path(activity) %>">
           <li class="icard"><%= activity.name %></li>
+          <%= cl_image_tag activity.photo.key, alt: "activity-image", class: "card-img" %>
         </a>
       <% end %>
 
