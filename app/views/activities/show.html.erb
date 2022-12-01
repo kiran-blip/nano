@@ -35,20 +35,20 @@
   <div class="activity-info-container">
     <div class="space-between-container">
       <h1><%= @activity.name %></h1>
+      <h2>£<%= @activity.price %></h2>
+    </div>
+
+    <div class="space-between-container">
+      <div class="rating-container">⭐⭐⭐⭐⭐</div>
       <div class="widgets-container">
         <a href="#">Like button</a>
         <a href="#">Share button</a>
       </div>
     </div>
 
-    <div class="space-between-container">
-      <h2><%= @activity.price %></h2>
-      <div class="rating-container">⭐⭐⭐⭐⭐</div>
-    </div>
-
     <div class="tags-container">
       <% @activity.tag.each do |tag| %>
-        <a href="<%= activities_path(query: tag) %>"><%= tag %></a>
+        <a href="<%= activities_path(query: tag) %>" class="show-tag"><%= tag %></a>
       <% end %>
     </div>
 
