@@ -49,11 +49,9 @@
     </div>
 
     <div class="tags-container">
-      <a href="#">Tag</a>
-      <a href="#">Tag</a>
-      <a href="#">Tag</a>
-      <a href="#">Tag</a>
-      <a href="#">Tag</a>
+      <% @activity.tag.each do |tag| %>
+        <a href="#"><%= tag %></a>
+      <% end %>
     </div>
 
     <p class="description"><%= @activity.description %></p>

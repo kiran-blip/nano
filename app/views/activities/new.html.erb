@@ -9,9 +9,10 @@
     <%= f.input :name %>
     <%= f.input :description %>
     <%= f.input :tag,
-    collection: Tag.all,
-    input_html: {multiple: true, data: {controller: "tom-select"}},
-    include_hidden: false %>
+      collection: %w(sport music history art team puzzle tour),
+      input_html: { multiple: true, data: {controller: "tom-select"} },
+      include_hidden: false
+    %>
     <%= f.input :price %>
     <%= f.input :free, as: :boolean, checked_value: 'positive', unchecked_value: 'negative' %>
     <%= f.input :location %>
