@@ -1,8 +1,9 @@
 <div class="margin-container">
-  <h1>Activities </h1>
+  <h1>Activities</h1>
 
   <!-- filter and search section -->
   <div class="container container-search">
+
     <div class="search filter-button">
       <div>
         <%= form_with url: activities_path, method: :get, class: "d-flex" do %>
@@ -15,18 +16,27 @@
         <% end %>
       </div>
     </div>
-    <!--
-    <div class="filter-button">
-      <i class="fa-solid fa-arrow-up-wide-short fa-4x"></i>
-      <h2>filter</h2>
-    </div>
-    -->
+
+    <div class="overlay hidden"></div>
+      <button class="filter-button btn-open">
+          <i class="fa-solid fa-arrow-up-wide-short fa-4x"></i>
+          <h2>Filter</h2>
+      </button>
+
+
   </div>
-<div class="overlay hidden"></div>
-  <button class="filter-button btn-open">
-      <i class="fa-solid fa-arrow-up-wide-short fa-4x"></i>
-      <h2>Filter</h2>
-  </button>
+
+  <%= link_to "New Activity", new_activity_path %>
+
+  <div>
+    <ul class="cards-index">
+      <% @activities.each do |activity| %>
+        <a href="<%= activity_path(activity) %>">
+          <li class="icard"><%= activity.name %></li>
+        </a>
+      <% end %>
+    </ul>
+  </div>
 </div>
 
 <!-- /filter and search section -->
@@ -54,108 +64,36 @@
 
 <!-- /Modal javascript -->
 <script>
-const modal = document.querySelector(".modal");
-const overlay = document.querySelector(".overlay");
-const openModalBtn = document.querySelector(".btn-open");
-const closeModalBtn = document.querySelector(".btn-close");
+  const modal = document.querySelector(".modal");
+  const overlay = document.querySelector(".overlay");
+  const openModalBtn = document.querySelector(".btn-open");
+  const closeModalBtn = document.querySelector(".btn-close");
 
-// close modal function
-const closeModal = function () {
-  modal.classList.add("hidden");
-  overlay.classList.add("hidden");
-};
+  // close modal function
+  const closeModal = function () {
+    modal.classList.add("hidden");
+    overlay.classList.add("hidden");
+  };
 
-// close the modal when the close button and overlay is clicked
-closeModalBtn.addEventListener("click", closeModal);
-overlay.addEventListener("click", closeModal);
+  // close the modal when the close button and overlay is clicked
+  closeModalBtn.addEventListener("click", closeModal);
+  overlay.addEventListener("click", closeModal);
 
-// close modal when the Esc key is pressed
-document.addEventListener("keydown", function (e) {
-  if (e.key === "Escape" && !modal.classList.contains("hidden")) {
-    closeModal();
-  }
-});
+  // close modal when the Esc key is pressed
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && !modal.classList.contains("hidden")) {
+      closeModal();
+    }
+  });
 
-// open modal function
-const openModal = function () {
-  modal.classList.remove("hidden");
-  overlay.classList.remove("hidden");
-};
-// open modal event
-openModalBtn.addEventListener("click", openModal);
+  // open modal function
+  const openModal = function () {
+    modal.classList.remove("hidden");
+    overlay.classList.remove("hidden");
+  };
+  // open modal event
+  openModalBtn.addEventListener("click", openModal);
 </script>
 <!-- /Modal javascript end -->
 
 <!-- /Modal end -->
-
-
-<!-- index area -->
-<div>
-  <div class="margin-container cards-index">
-
-<!-- make a icard -->
-    <div class="icard card">
-      <img src="https://ksassets.timeincuk.net/wp/uploads/sites/55/2011/06/MumfordGlastonburyTOX240611_0-4.jpg" alt="">
-      <div class="info">
-      <p> look an activity!</p>
-      </div>
-    </div>
-
-
-<!-- make a icard card -->
-    <div class="icard card">
-      <img src="https://ksassets.timeincuk.net/wp/uploads/sites/55/2011/06/MumfordGlastonburyTOX240611_0-4.jpg" alt="">
-      <div class="info">
-      <p> look an activity!</p>
-      </div>
-    </div>
-
-
-<!-- make a icard card -->
-    <div class="icard card">
-      <img src="https://ksassets.timeincuk.net/wp/uploads/sites/55/2011/06/MumfordGlastonburyTOX240611_0-4.jpg" alt="">
-      <div class="info">
-      <p> look an activity!</p>
-      </div>
-    </div>
-
-
-<!-- make a icard card -->
-    <div class="icard card">
-      <img src="https://ksassets.timeincuk.net/wp/uploads/sites/55/2011/06/MumfordGlastonburyTOX240611_0-4.jpg" alt="">
-      <div class="info">
-      <p> look an activity!</p>
-      </div>
-    </div>
-
-  <%= link_to "New Activity", new_activity_path %>
-
-  <div>
-    <ul class="cards-index">
-      <% @activities.each do |activity| %>
-        <a href="<%= activity_path(activity) %>">
-          <li class="icard"><%= activity.name %></li>
-          <%= cl_image_tag activity.photo.key, alt: "activity-image", class: "card-img" %>
-        </a>
-      <% end %>
-
-    </ul>
-  </div>
-
-
-
-
-
-
-  <!-- index area
-
-    <div class="icard card">
-      <img src="https://ksassets.timeincuk.net/wp/uploads/sites/55/2011/06/MumfordGlastonburyTOX240611_0-4.jpg" alt="">
-      <div class="info">
-      <p> look an activity!</p>
-      </div>
-    </div>
-
-  -->
-
-</div>
