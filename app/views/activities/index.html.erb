@@ -37,13 +37,21 @@
 
 
 <!-- filter and search section -->
-<div class="container">
-  <div class="search-bar">
-    <div class ="search-btn">
+<div class="container container-search">
+  <div class="search">
+    <div >
+      <%= form_with url: activities_path, method: :get, class: "d-flex" do %>
+      <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Find an activity"
+       %>
+      <%= submit_tag "Search", class: "btn btn-primary" %>
+      <% end %>
     </div>
   </div>
-  <div class="filter">
-    <i class="fa-solid fa-arrow-up-wide-short"></i>
+  <div class="filter-button">
+    <i class="fa-solid fa-arrow-up-wide-short fa-4x"></i>
     <h2>filter</h2>
   </div>
 </div>
