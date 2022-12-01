@@ -37,6 +37,7 @@
 }
 
 .explore-container {
+  text-decoration: none;
 
   .category-text {
     text-align: center;
@@ -59,16 +60,32 @@
   .categorycard-container {
     display: flex;
     flex-wrap: wrap;
-    margin: 0 20px;
+    margin: 0 80px;
     justify-content: space-between;
 
     .card-category {
-      background-color: rgb(181, 181, 181);
+      background-size: cover;
+      display: flex;
+      justify-content: center;
       width: 150px;
       height: 100px;
       border-radius: 5px;
       justify-content: space-between;
       margin-bottom: 10px;
+
+      p {
+        margin: 32px auto;
+        color: white;
+        font-weight: bold;
+      }
+
+
+
+      .genre-image {
+        width: 150px;
+        height: 100px;
+        object-fit: contain;
+      }
     }
   }
 }
@@ -95,4 +112,9 @@
   padding: 50px;
   padding-top: 100px;
   background-color: white;
+}
+
+
+a {
+  text-decoration: none !important;
 }
