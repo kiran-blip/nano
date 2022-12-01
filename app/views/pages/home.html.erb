@@ -65,7 +65,7 @@
     <div class="category-text">
         <p>explore</p>
     </div>
-    <div class="categories-container">
+    <%# <div class="categories-container">
       <ul>
         <li>category 1</li>
         <li>category 2</li>
@@ -76,14 +76,49 @@
         <li>category 7</li>
         <li>category 8</li>
       </ul>
-    </div>
+    </div> %>
+
     <div class="categorycard-container">
-      <div class="card-category">1</div>
-      <div class="card-category">2</div>
-      <div class="card-category">3</div>
-      <div class="card-category">4</div>
-      <div class="card-category">5</div>
-      <div class="card-category">6</div>
+      <%= link_to activities_path(query: "sport") do %>
+      <div class="card-category"style="background-image: linear-gradient(rgba(255,0,0,0), rgba(,0,0,1)), url('https://hazel-oak.co.uk/wp-content/uploads/2021/05/SportsEquipment.jpg');">
+      <p>sport</p>
+        <%# <img class="genre-image" src="https://hazel-oak.co.uk/wp-content/uploads/2021/05/SportsEquipment.jpg"> %>
+      </div>
+      <% end %>
+      <%= link_to activities_path(query: "nature") do %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(255,0,0,0), rgba(,0,0,1)), url('https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/nature-quotes-landscape-1648265299.jpg?crop=0.676xw:1.00xh;0.148xw,0&resize=640:*');">
+      <p>nature</p>
+        <%# <img class="genre-image" src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/nature-quotes-landscape-1648265299.jpg?crop=0.676xw:1.00xh;0.148xw,0&resize=640:*"> %>
+      </div>
+      <% end %>
+      <%= link_to activities_path(query: "art") do %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(255,0,0,0), rgba(,0,0,1)), url('https://ichef.bbci.co.uk/images/ic/1200x675/p0bclt6l.jpg');">
+      <p>art</p>
+        <%# <img class="genre-image" src="https://ichef.bbci.co.uk/images/ic/1200x675/p0bclt6l.jpg"> %>
+      </div>
+      <% end %>
+      <%= link_to activities_path(query: "history") do %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(255,0,0,0), rgba(,0,0,1)), url('https://www.york.ac.uk/media/study/courses/undergraduate/history/hero-history-economics-ba-1160.jpg');">
+        <p>history</p>
+        <%# <img class="genre-image" src="https://www.york.ac.uk/media/study/courses/undergraduate/history/hero-history-economics-ba-1160.jpg"> %>
+      </div>
+      <% end %>
+      <%= link_to activities_path(query: "music") do %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(255,0,0,0), rgba(,0,0,1)), url('https://ichef.bbci.co.uk/news/976/cpsprodpb/83B8/production/_122602733_gettyimages-168259014.jpg');">
+        <p>music</p>
+        <%# <img class="genre-image" src="https://ichef.bbci.co.uk/news/976/cpsprodpb/83B8/production/_122602733_gettyimages-168259014.jpg"> %>
+      </div>
+      <% end %>
+      <%= link_to activities_path(query: "team") do %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(255,0,0,0), rgba(,0,0,1)), url('https://assets.entrepreneur.com/content/3x2/2000/20151215195453-business-leader-group-front-leadership-team-professionals-businesspeople.jpeg');">
+      <p>team</p>
+        <%# <img class="genre-image" src="https://assets.entrepreneur.com/content/3x2/2000/20151215195453-business-leader-group-front-leadership-team-professionals-businesspeople.jpeg"> %>
+      </div>
+      <% end %>
     </div>
   </div>
 </div>
+
+<%# <%= link_to "sport", activities_path(tag: "sport") %>
+<%# activities?query=Safe+senders+list&commit=Search %>
+<%# <%= link_to "sport", "activities?query=#{xyz}$&commit=Search" %>
