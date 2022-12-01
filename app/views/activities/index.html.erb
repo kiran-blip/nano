@@ -1,54 +1,26 @@
-<h1>Activities </h1>
+<div class="margin-container">
+  <h1>Activities </h1>
 
-
-<div>
-  <ul>
-    <% @activities.each do |activity| %>
-      <li><%= link_to activity.name, activity_path(activity) %></li>
-    <% end %>
-
-  </ul>
-</div>
-
-<%= link_to "New Activity", new_activity_path %>
-
-
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-  </head>
-<body>
-
-<!-- navbar -->
-<div class="nav-bar">
-<!-- add things in here -->
-</div>
-<!-- /navbar -->
-
-
-<!-- header -->
-<div class="container">
-  <img src="" alt="">
-    <h1>Nano</h1>
-</div>
-<!-- /header -->
-
-
-<!-- filter and search section -->
-<div class="container container-search">
-  <div class="search">
-    <div >
-      <%= form_with url: activities_path, method: :get, class: "d-flex" do %>
-      <%= text_field_tag :query,
-      params[:query],
-      class: "form-control",
-      placeholder: "Find an activity"
-       %>
-      <%= submit_tag "Search", class: "btn btn-primary" %>
-      <% end %>
+  <!-- filter and search section -->
+  <div class="container container-search">
+    <div class="search filter-button">
+      <div>
+        <%= form_with url: activities_path, method: :get, class: "d-flex" do %>
+        <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Find an activity"
+        %>
+        <%= submit_tag "Search", class: "btn btn-primary" %>
+        <% end %>
+      </div>
     </div>
+    <!--
+    <div class="filter-button">
+      <i class="fa-solid fa-arrow-up-wide-short fa-4x"></i>
+      <h2>filter</h2>
+    </div>
+    -->
   </div>
 <div class="overlay hidden"></div>
   <button class="filter-button btn-open">
@@ -156,78 +128,33 @@ openModalBtn.addEventListener("click", openModal);
       </div>
     </div>
 
+  <%= link_to "New Activity", new_activity_path %>
 
-<!-- make a icard card -->
-    <div class="icard card">
-      <img src="https://ksassets.timeincuk.net/wp/uploads/sites/55/2011/06/MumfordGlastonburyTOX240611_0-4.jpg" alt="">
-      <div class="info">
-      <p> look an activity!</p>
-      </div>
-    </div>
+  <div>
+    <ul class="cards-index">
+      <% @activities.each do |activity| %>
+        <a href="<%= activity_path(activity) %>">
+          <li class="icard"><%= activity.name %></li>
+        </a>
+      <% end %>
 
-
-<!-- make a icard card -->
-    <div class="icard card">
-      <img src="https://ksassets.timeincuk.net/wp/uploads/sites/55/2011/06/MumfordGlastonburyTOX240611_0-4.jpg" alt="">
-      <div class="info">
-      <p> look an activity!</p>
-      </div>
-    </div>
-
-
-<!-- make a icard card -->
-    <div class="icard card">
-      <img src="https://ksassets.timeincuk.net/wp/uploads/sites/55/2011/06/MumfordGlastonburyTOX240611_0-4.jpg" alt="">
-      <div class="info">
-      <p> look an activity!</p>
-      </div>
-    </div>
-
-
-<!-- make a icard card -->
-    <div class="icard card">
-      <img src="https://ksassets.timeincuk.net/wp/uploads/sites/55/2011/06/MumfordGlastonburyTOX240611_0-4.jpg" alt="">
-      <div class="info">
-      <p> look an activity!</p>
-      </div>
-    </div>
-
-
-<!-- make a icard card -->
-    <div class="icard card">
-      <img src="https://ksassets.timeincuk.net/wp/uploads/sites/55/2011/06/MumfordGlastonburyTOX240611_0-4.jpg" alt="">
-      <div class="info">
-      <p> look an activity!</p>
-      </div>
-    </div>
-
-<!-- make a icard card -->
-    <div class="icard card">
-      <img src="https://ksassets.timeincuk.net/wp/uploads/sites/55/2011/06/MumfordGlastonburyTOX240611_0-4.jpg" alt="">
-      <div class="info">
-      <p> look an activity!</p>
-      </div>
-    </div>
-
-<!-- make a icard card -->
-    <div class="icard card">
-      <img src="https://ksassets.timeincuk.net/wp/uploads/sites/55/2011/06/MumfordGlastonburyTOX240611_0-4.jpg" alt="">
-      <div class="info">
-      <p> look an activity!</p>
-      </div>
-    </div>
-
-<!-- make a icard card -->
-    <div class="icard card">
-      <img src="https://ksassets.timeincuk.net/wp/uploads/sites/55/2011/06/MumfordGlastonburyTOX240611_0-4.jpg" alt="">
-      <div class="info">
-      <p> look an activity!</p>
-      </div>
-    </div>
-
+    </ul>
   </div>
+
+
+
+
+
+
+  <!-- index area
+
+    <div class="icard card">
+      <img src="https://ksassets.timeincuk.net/wp/uploads/sites/55/2011/06/MumfordGlastonburyTOX240611_0-4.jpg" alt="">
+      <div class="info">
+      <p> look an activity!</p>
+      </div>
+    </div>
+
+  -->
+
 </div>
-<!-- /index area-->
-
-
-</body>

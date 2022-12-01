@@ -1,14 +1,48 @@
 .cards-index {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-content: space-between;
+  flex-flow: wrap;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  gap: 10px;
 }
 
 .icard {
-  width: calc(25% - 10px);
-  margin: 5px;
-  height: calc(25vw - 10px);
+  width: 160px;
+  height: 160px;
 
-  // margin-bottom: 10px;
+  list-style: none;
+  background-color: white;
+  box-shadow: 0 10px 30px 0 rgba(0, 49, 117, 0.1);
+  border-radius: 5px;
+
+
 }
+
+
+// .card-category {
+//   background-size: cover;
+//   display: flex;
+//   justify-content: center;
+//   width: 150px;
+//   height: 100px;
+//   border-radius: 5px;
+//   justify-content: space-between;
+//   margin-bottom: 10px;
+
+//   // #grad {
+//   //   background-image: linear-gradient(rgba(255,0,0,0), rgba(255,0,0,1));
+//   // }
+
+//   p {
+//     margin: 32px auto;
+//     color: white;
+//     font-weight: bold;
+//   }
+
+//   .genre-image {
+//     width: 150px;
+//     height: 100px;
+//     object-fit: contain;
+//   }
+// }

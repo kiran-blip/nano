@@ -1,20 +1,79 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
-
-# User.create!(first_name:"John", last_name:"Doe", email:"kiran@y.com", password: "123456")
-
 Activity.destroy_all
 
-Activity.create!(name: "bowling", user_id: 1, tag: ["fun", "sport"])
-Activity.create!(name: "shooting", user_id: 1, tag: ["sport"])
-Activity.create!(name: "skiing", user_id: 1, tag: ["sport", "winter"])
-Activity.create!(name: "ice skating", user_id: 1, tag: ["sport", "winter"])
-Activity.create!(name: "running", user_id: 1, tag: ["sport"])
+Activity.create!(
+  name: "Hollywood Bowl",
+  description: "Hollywood Bowl is the UK's best ten pin bowling alley. With a delicious food & drink menu and arcade games - there's something for everyone!",
+  tag: ["fun", "sport", "bowling"],
+  price: 10,
+  image: nil,
+  start: DateTime.new(2022,12,1),
+  end: DateTime.new(2022,12,2),
+  location: "Shoreditch",
+  free: false,
+  venue: nil,
+  booking: true,
+  user_id: 1
+)
+
+Activity.create!(
+  name: "Queensway Ice Rink",
+  description: "Let's get back into our glide! London's only all year-round ice rink. Whether you are a pro or just playin' - you're welcome at Queens.",
+  tag: ["sport", "winter"],
+  price: 20,
+  image: nil,
+  start: DateTime.new(2022,12,2),
+  end: DateTime.new(2022,12,2),
+  location: "Hoxton",
+  free: false,
+  venue: nil,
+  booking: false,
+  user_id: 2
+)
+
+Activity.create!(
+  name: "Running",
+  description: "Running is a method of terrestrial locomotion allowing humans and other animals to move rapidly on foot.",
+  tag: ["sport"],
+  price: 0,
+  image: nil,
+  start: DateTime.new(2022,12,2),
+  end: DateTime.new(2022,12,3),
+  location: "Haggerston",
+  free: true,
+  venue: nil,
+  booking: false,
+  user_id: 2
+)
+
+Activity.create!(
+  name: "British Pistol Club",
+  description: "The British Pistol Club was founded in 1957, for the encouragement of International Pistol Shooting, and is the oldest and largest shooting club exclusive to pistol in Great Britain.",
+  tag: ["sport", "shooting"],
+  price: 20,
+  image: nil,
+  start: DateTime.new(2022,12,1),
+  end: DateTime.new(2022,12,4),
+  location: "Camden Town",
+  free: false,
+  venue: nil,
+  booking: true,
+  user_id: 1
+)
+
+Activity.create!(
+  name: "The Snow Centre",
+  description: "The UK's largest indoor lesson slope, maintained with the perfect snow - perfect for all your indoor skiing and snowboarding needs.",
+  tag: ["winter", "sport"],
+  price: 30,
+  image: nil,
+  start: DateTime.new(2022,12,4),
+  end: DateTime.new(2022,12,4),
+  location: "Farringdon",
+  free: false,
+  venue: nil,
+  booking: true,
+  user_id: 1
+)
 
 # Tag.destroy_all if Rails.env.development?
 
