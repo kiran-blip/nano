@@ -57,7 +57,8 @@
 }
 
 .icard img{
-  width: 100%;
+  width: calc(100%-10px);
+  margin: 5px;
   height: 75%;
   object-fit: cover;
 }

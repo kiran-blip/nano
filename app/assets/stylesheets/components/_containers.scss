@@ -105,3 +105,24 @@
     font-style: italic;
   }
 }
+
+.container-search {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: 200px;
+  justify-content: center;
+  align-items: center;
+}
+
+.search {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: left;
+}
+
+.filter {
+  display: flex;
+  justify-content: space-around;
+}
