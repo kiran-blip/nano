@@ -50,7 +50,7 @@
 
     <div class="tags-container">
       <% @activity.tag.each do |tag| %>
-        <a href="#"><%= tag %></a>
+        <a href="<%= activities_path(query: tag) %>"><%= tag %></a>
       <% end %>
     </div>
 
