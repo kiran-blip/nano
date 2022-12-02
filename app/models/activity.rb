@@ -6,8 +6,9 @@ class Activity < ApplicationRecord
   after_validation :geocode, if: :will_save_change_to_location?
   include PgSearch::Model
   pg_search_scope :search_by_name_and_description_and_tag_and_location_and_venue,
-  against: [ :name, :description, :tag, :location, :venue],
-  using: {
-    tsearch: { prefix: true }
-  }
+                  against: [:name, :description, :tag, :location, :venue],
+                  using: {
+                    tsearch: { prefix: true }
+                  }
+  pg_search_scope :search_by_tags, against: [:tag], using: { tsearch: { prefix: true } }
 end
