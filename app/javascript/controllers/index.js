@@ -12,3 +12,6 @@ application.register("map", MapController)
 
 import TomSelectController from "./tom_select_controller"
 application.register("tom-select", TomSelectController)
+
+import ModalController from "./modal_controller"
+application.register("modal", ModalController)
