@@ -17,8 +17,12 @@
     <%= f.input :free, as: :boolean, checked_value: 'positive', unchecked_value: 'negative' %>
     <%= f.input :location %>
     <%= f.input :photo, as: :file %>
-    <%= f.input :start, as: :date, html5: true  %>
-    <%= f.input :end, as: :date, html5: true %>
+
+    <div class="start-end-container">
+      <%= f.input :start, as: :date, html5: true  %>
+      <%= f.input :end, as: :date, html5: true %>
+    </div>
+    
     <%= f.input :venue %>
     <%= f.input :booking, as: :boolean, checked_value: 'positive', unchecked_value: 'negative' %>
     <div class="form-actions btn-container">
