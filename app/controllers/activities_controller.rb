@@ -1,12 +1,26 @@
 class ActivitiesController < ApplicationController
   def index
     # Refactor
-    if params.nil?
+    if params[:query].nil? && params[:tags].nil? && params[:min].nil? && params[:max].nil?
       @activities = Activity.all
+
     elsif !params[:tags].nil?
       @activities = Activity.search_by_tags(params[:tags])
-    elsif !params[:min].nil? && !params[:max].nil?
-      @activities = Activity.where(price: params[:min]..params[:max])
+
+    elsif !params[:min].nil? || !params[:max].nil?
+      if params[:min] == ""
+        min_price = 0
+      else
+        min_price = params[:min].to_i
+      end
+
+      if params[:max] == ""
+        max_price = 0
+      else
+        max_price = params[:max].to_i
+      end
+
+      @activities = Activity.where(price: min_price..max_price)
     else
       @activities = Activity.search_by_name_and_description_and_tag_and_location_and_venue(params[:query])
     end

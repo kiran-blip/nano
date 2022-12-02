@@ -23,3 +23,11 @@
   justify-content:space-around;
   align-items: center;
 }
+
+.button-circle {
+  background-color: white;
+  border-radius: 50%;
+  padding: 10px;
+  margin: 5px;
+  box-shadow: 0 10px 10px 0 rgba(0, 49, 117, 0.2);
+}

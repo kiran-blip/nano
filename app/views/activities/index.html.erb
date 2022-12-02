@@ -47,13 +47,17 @@
 <section class="modal hidden">
   <div class="flex">
     <img src="https://avatars.githubusercontent.com/u/62628408?s=96&v=4" width="50px" height="50px" alt="user" />
-    <button class="btn-close">⨉</button>
+    <button class="btn-close">❌</button>
   </div>
   <div>
 
-    <!-- Price form -->
+    <!-- Form -->
     <div>
-      <%= form_with url: activities_path, method: :get, class: "d-flex" do %>
+      <%= form_with url: activities_path, method: :get, class: "d-flex modal-form" do %>
+        <%= text_field_tag :query,
+                            params[:query],
+                            class: "form-control",
+                            placeholder: "Search" %>
         <%= text_field_tag :min,
                             params[:min],
                             class: "form-control",
@@ -62,15 +66,13 @@
                             params[:max],
                             class: "form-control",
                             placeholder: "Maximum price" %>
-        <%= submit_tag "Search", class: "btn btn-primary" %>
+        <%= submit_tag "Search", class: "btn" %>
       <% end %>
     </div>
-    <!-- Price form -->
+    <!-- Form -->
 
   </div>
 
-  <input type="email" id="email" placeholder="brendaneich@js.com" />
-  <button class="btn">Do Something</button>
 </section>
 
 
