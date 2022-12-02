@@ -1,18 +1,28 @@
-<div class="margin-container">
-  <h1>Activities</h1>
+<h1>Activities </h1>
 
-  <!-- filter and search section -->
-  <div class="container container-search">
 
-    <div class="search filter-button">
-      <div>
-        <%= form_with url: activities_path, method: :get, class: "d-flex" do %>
+<%= link_to "New Activity", new_activity_path %>
+
+<!-- header -->
+<div class="container">
+  <img src="" alt="">
+  <h1>Nano</h1>
+</div>
+<!-- /header -->
+
+
+<!-- filter and search section -->
+<div class="container container-search">
+  <div class="search">
+    <div>
+      <%= form_with url: activities_path, method: :get, class: "d-flex" do %>
         <%= text_field_tag :query,
         params[:query],
         class: "form-control",
         placeholder: "Find an activity"
         %>
         <%= submit_tag "Search", class: "btn btn-primary" %>
+
         <% end %>
       </div>
     </div>
@@ -37,9 +47,15 @@
             <%= cl_image_tag activity.photo.key %>
           </li>
         </a>
+
       <% end %>
-    </ul>
+    </div>
   </div>
+  <div class="overlay hidden"></div>
+  <button class="filter-button btn-open">
+    <i class="fa-solid fa-arrow-up-wide-short fa-4x"></i>
+    <h2>Filter</h2>
+  </button>
 </div>
 
 <!-- /filter and search section -->
@@ -76,9 +92,70 @@
 
   </div>
 
+  <input type="email" id="email" placeholder="brendaneich@js.com" />
+  <button class="btn">Do Something</button>
+
+
+
 </section>
 
+<!-- index area -->
+<div>
+  <div class="margin-container">
+    <div class="cards-index">
+      <% @activities.each do |activity| %>
+      <!-- make a icard -->
+        <div class="card icard">
+          <a href="<%= activity_path(activity) %>">
+            <div class="icard-child">
+              <img src="https://ksassets.timeincuk.net/wp/uploads/sites/55/2011/06/MumfordGlastonburyTOX240611_0-4.jpg" alt="">
+              <div class="info">
+               <h5> <%= activity.name %></h5>
+              </div>
+            </div>
+          </a>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+<!-- /index area-->
 
+
+
+<!-- /Modal javascript -->
+<script>
+const modal = document.querySelector(".modal");
+const overlay = document.querySelector(".overlay");
+const openModalBtn = document.querySelector(".btn-open");
+const closeModalBtn = document.querySelector(".btn-close");
+
+// close modal function
+const closeModal = function () {
+  modal.classList.add("hidden");
+  overlay.classList.add("hidden");
+};
+
+// close the modal when the close button and overlay is clicked
+closeModalBtn.addEventListener("click", closeModal);
+overlay.addEventListener("click", closeModal);
+
+// close modal when the Esc key is pressed
+document.addEventListener("keydown", function (e) {
+  if (e.key === "Escape" && !modal.classList.contains("hidden")) {
+    closeModal();
+  }
+});
+
+// open modal function
+const openModal = function () {
+  modal.classList.remove("hidden");
+  overlay.classList.remove("hidden");
+};
+// open modal event
+openModalBtn.addEventListener("click", openModal);
+</script>
+<!-- /Modal javascript end -->
 
 
 <!-- /Modal end -->
