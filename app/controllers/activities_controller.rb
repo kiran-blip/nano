@@ -42,6 +42,7 @@ class ActivitiesController < ApplicationController
   end
 
   def create
+    
     @activity = Activity.new(activity_params)
     @activity.user = current_user
     if @activity.save
@@ -54,6 +55,6 @@ class ActivitiesController < ApplicationController
   private
 
   def activity_params
-    params.require(:activity).permit(:name, :description, :location, :price, :venue, :photo, tag:[])
+    params.require(:activity).permit(:name, :description, :location, :price, :venue, photos: [], tag:[])
   end
 end

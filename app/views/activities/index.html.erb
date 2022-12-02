@@ -76,10 +76,10 @@
         <div class="card icard">
           <a href="<%= activity_path(activity) %>">
             <div class="icard-child">
-              <% if activity.photo.key.nil? %>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Bowlerbowling.JPG">
+              <% if activity.photos.attached? %>
+                <%= cl_image_tag activity.photos[0].key  %>
               <% else %>
-                <%= cl_image_tag activity.photo.key %>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Bowlerbowling.JPG">
               <% end %>
               <div class="info">
                <h5> <%= activity.name %></h5>
@@ -92,3 +92,5 @@
   </div>
 </div>
 <!-- /index area-->
+
+
