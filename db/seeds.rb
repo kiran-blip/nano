@@ -1,3 +1,6 @@
+User.create! email: "kiran@nedumkallel.co.uk", password: "password"
+
+
 Activity.destroy_all
 
 Activity.create!(

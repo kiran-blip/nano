@@ -22,6 +22,32 @@
         placeholder: "Find an activity"
         %>
         <%= submit_tag "Search", class: "btn btn-primary" %>
+
+        <% end %>
+      </div>
+    </div>
+
+    <div class="overlay hidden">
+    </div>
+    <button class="filter-button btn-open">
+        <i class="fa-solid fa-arrow-up-wide-short fa-4x"></i>
+        <h2>Filter</h2>
+    </button>
+
+  </div>
+
+  <%= link_to "New Activity", new_activity_path %>
+
+  <div>
+    <ul class="cards-index">
+      <% @activities.each do |activity| %>
+        <a href="<%= activity_path(activity) %>">
+          <li class="icard">
+            <%= activity.name %>
+            <%= cl_image_tag activity.photo.key %>
+          </li>
+        </a>
+
       <% end %>
     </div>
   </div>
@@ -40,17 +66,37 @@
 <section class="modal hidden">
   <div class="flex">
     <img src="https://avatars.githubusercontent.com/u/62628408?s=96&v=4" width="50px" height="50px" alt="user" />
-    <button class="btn-close">⨉</button>
+    <button class="btn-close">❌</button>
   </div>
   <div>
-    <h3>Stay in touch</h3>
-    <p>
-      This is a dummy filter form so don't bother trying to test it. Not
-      that I expect you to, anyways. :)
-    </p>
+
+    <!-- Form -->
+    <div>
+      <%= form_with url: activities_path, method: :get, class: "d-flex modal-form" do %>
+        <%= text_field_tag :query,
+                            params[:query],
+                            class: "form-control",
+                            placeholder: "Search" %>
+        <%= text_field_tag :min,
+                            params[:min],
+                            class: "form-control",
+                            placeholder: "Minimum price" %>
+        <%= text_field_tag :max,
+                            params[:max],
+                            class: "form-control",
+                            placeholder: "Maximum price" %>
+        <%= submit_tag "Search", class: "btn" %>
+      <% end %>
+    </div>
+    <!-- Form -->
+
   </div>
+
   <input type="email" id="email" placeholder="brendaneich@js.com" />
   <button class="btn">Do Something</button>
+
+
+
 </section>
 
 <!-- index area -->
@@ -74,6 +120,7 @@
   </div>
 </div>
 <!-- /index area-->
+
 
 
 <!-- /Modal javascript -->
@@ -109,5 +156,6 @@ const openModal = function () {
 openModalBtn.addEventListener("click", openModal);
 </script>
 <!-- /Modal javascript end -->
+
 
 <!-- /Modal end -->
