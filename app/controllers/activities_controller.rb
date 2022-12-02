@@ -21,21 +21,22 @@ class ActivitiesController < ApplicationController
       end
 
       if params[:max] == ""
-        max_price = 0
+        max_price = 100_000_000
       else
         max_price = params[:max].to_i
       end
 
       # @activities = Activity.where(price: min_price..max_price)
-      searches.push("Activity.where(price: min_price..max_price)")
+      range = "Activity.where(price: #{min_price}..#{max_price})"
+      searches.push(range)
     end
 
-    if !params[:query].nil?
+    if !params[:query].nil? && !params[:query] == ""
       # @activities = Activity.search_all(params[:query])
       searches.push("Activity.search_all(params[:query])")
     end
 
-    @activities = eval(searches.join(" & "))
+    @activities = eval(searches.join(" & ")) # eval() is a serious security issue
   end
 
   def show
