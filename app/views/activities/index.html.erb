@@ -32,7 +32,10 @@
     <ul class="cards-index">
       <% @activities.each do |activity| %>
         <a href="<%= activity_path(activity) %>">
-          <li class="icard"><%= activity.name %></li>
+          <li class="icard">
+            <%= activity.name %>
+            <%= cl_image_tag activity.photo.key %>
+          </li>
         </a>
       <% end %>
     </ul>
