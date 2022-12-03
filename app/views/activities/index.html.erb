@@ -1,5 +1,5 @@
 <div class="margin-container">
-  <h1>Activities </h1>
+  <h1>Activities</h1>
 
   <%= link_to "New Activity", new_activity_path %>
 
@@ -72,18 +72,19 @@
   <div class="margin-container">
     <div class="cards-index">
       <% @activities.each do |activity| %>
-      <!-- make a icard -->
-        <div class="card icard">
+        <!-- make a icard -->
+        <div class="card">
           <a href="<%= activity_path(activity) %>">
-            <div class="icard-child">
+            <div class="card-category">
+              <p class="centered"><%= activity.name %></p>
               <% if activity.photos.attached? %>
                 <%= cl_image_tag activity.photos[0].key  %>
               <% else %>
                 <img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Bowlerbowling.JPG">
               <% end %>
-              <div class="info">
+              <!--<div class="info">
                <h5> <%= activity.name %></h5>
-              </div>
+              </div>-->
             </div>
           </a>
         </div>
@@ -92,5 +93,3 @@
   </div>
 </div>
 <!-- /index area-->
-
-
