@@ -1,0 +1,22 @@
+.search-form {
+  height: 50px;
+  border-radius: 25px;
+  padding: 0 15px;
+  background-color: $blue;
+  box-shadow: 0 10px 30px 0 rgba(0, 0, 40, 0.3);
+
+  .form-control {
+    background-color: transparent;
+    border: none;
+    color: white;
+
+    &::placeholder {
+      color: rgba(255,255,255,0.7);
+    }
+
+    &:focus {
+      border: none;
+      box-shadow: none;
+    }
+  }
+}

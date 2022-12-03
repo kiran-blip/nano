@@ -12,7 +12,8 @@
 @import "tags";
 @import "buttons";
 @import "modal";
+@import "forms";
 
 body {
-  background-color: #eeeeee;
+  background: radial-gradient($indigo, $indigo-dark);
 }
