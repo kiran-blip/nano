@@ -3,6 +3,13 @@ class ActivitiesController < ApplicationController
     searches = []
 
     # Refactor
+    if !params[:query].nil?
+      # @activities = Activity.search_all(params[:query])
+      searches.push("Activity.search_all(params[:query])")
+    elsif params[:query] == ""
+      searches.push("Activity.search_all(params[' '])")
+    end
+
     if params[:query].nil? && params[:tags].nil? && params[:min].nil? && params[:max].nil?
       # @activities = Activity.all
       searches.push("Activity.all")
@@ -31,11 +38,6 @@ class ActivitiesController < ApplicationController
       searches.push(range)
     end
 
-    if !params[:query].nil? && !params[:query] == ""
-      # @activities = Activity.search_all(params[:query])
-      searches.push("Activity.search_all(params[:query])")
-    end
-
     @activities = eval(searches.join(" & ")) # eval() is a serious security issue
   end
 
@@ -55,7 +57,6 @@ class ActivitiesController < ApplicationController
   end
 
   def create
-    
     @activity = Activity.new(activity_params)
     @activity.user = current_user
     if @activity.save
