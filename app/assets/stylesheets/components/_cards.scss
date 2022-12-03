@@ -1,8 +1,8 @@
 .cards-index {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  align-content: space-between;
+  justify-content: center;
+  gap: 20px;
 }
 
 .icard {
@@ -30,8 +30,8 @@
   display: flex;
   flex-wrap: wrap;
   margin: 0 10%;
-  justify-content: center;
   gap: 20px;
+  justify-content: center;
   padding-bottom: 50px;
 }
 
@@ -42,7 +42,6 @@
   width: 200px;
   height: 150px;
   border-radius: 10px;
-  justify-content: space-between;
 
   background-color: $indigo-light;
   background-size: 80%;
@@ -80,9 +79,21 @@
   .centered {
     text-align: center;
     line-height: 24px;
+    padding: 10px;
+  }
+
+  .carousel-centered {
+    text-align: center;
+    line-height: 24px;
     position: absolute;
-    top: 30%;
+    top: 20%;
     left: 50%;
     transform: translate(-50%, -50%);
+  }
+}
+
+.card-border {
+  &:hover {
+    outline: 5px solid $blue;
   }
 }

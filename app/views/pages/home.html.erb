@@ -9,7 +9,7 @@
   <div class="lettering-container">
     <h1>nano</h1>
     <p>non-alcoholic nights out</p>
-    <%= form_with url: activities_path, method: :get, class: "d-flex search-form" do %>
+    <%= form_with url: activities_path, method: :get, class: "d-flex search-form", html: {autocomplete: "off"} do %>
       <%= text_field_tag :query,
       params[:query],
       class: "form-control",
@@ -29,8 +29,8 @@
 
     <% 10.times do %>
       <%= link_to "#" do %>
-        <div class="card-category carousel-cell-home">
-          <p class="centered">Activity Name</p>
+        <div class="card-category card-border carousel-cell-home">
+          <p class="carousel-centered">Activity Name</p>
           <img class="w3-image" src="https://m.media-amazon.com/images/I/51BL4Cpt8tL._AC_.jpg">
         </div>
       <% end %>
