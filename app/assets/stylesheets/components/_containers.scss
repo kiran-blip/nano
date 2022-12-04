@@ -1,24 +1,34 @@
 .logo-search-container {
-  background-color: white;
+  background: radial-gradient($indigo, $indigo-dark);
+  display: flex;
+  gap: 5%;
+  box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.3);
+}
 
+.lettering-container {
+  width: 50%;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  padding: 120px 0 150px;
+  color: white;
 
-  .lettering-container {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    padding: 50px 0;
+  h1 {
+    font-size: 100px;
+    margin: 0;
+  }
 
-    h1 {
-      font-size: 100px;
-    }
-    p {
-      color: black;
-    }
+  p {
+    margin: -10px 0 30px;
   }
 }
 
 .tonight-container {
-  padding: 25px 25px 75px;
+  height: 350px;
+  padding: 25px 0;
+  color: white;
+  background-color: $indigo-dark;
+  box-shadow: inset 0 10px 30px 0 rgba(0, 0, 40, 0.3);
 
   .card-container-carousel {
     display: flex;
@@ -26,7 +36,7 @@
     height: 100px;
 
     .card {
-      background-color: rgb(181, 181, 181);
+      background-color: $indigo-dark;
       width: 150px;
       max-height: fit-content;
       border-radius: 5px;
@@ -37,6 +47,7 @@
 
 .explore-container {
   text-decoration: none;
+  margin: 0 20%;
 
   .categories-container {
     margin-bottom: 15px;
@@ -51,44 +62,20 @@
       list-style: none;
     }
   }
-
-  .category-card-container {
-    display: flex;
-    flex-wrap: wrap;
-    // margin: 0 80px;
-    justify-content: center;
-    gap: 20px;
-    padding-bottom: 50px;
-
-    .card-category {
-      background-size: cover;
-      display: flex;
-      justify-content: center;
-      width: 200px;
-      height: 150px;
-      border-radius: 5px;
-      justify-content: space-between;
-      box-shadow: 0 10px 20px 0 rgba(0, 49, 117, 0.2);
-
-      p {
-        margin: 32px auto;
-        color: white;
-        font-weight: bold;
-        align-self: center;
-      }
-
-      .genre-image {
-        width: 150px;
-        height: 100px;
-        object-fit: contain;
-      }
-    }
-  }
 }
 
 .margin-container {
   width: 60%;
   margin: auto;
+  color: white;
+
+  h1 {
+    padding-top: 50px;
+  }
+
+  h3 {
+    padding: 30px 150px;
+  }
 }
 
 .space-between-container {
@@ -108,7 +95,8 @@
   padding: 50px;
   padding-right: 10%;
   padding-top: 100px;
-  background-color: white;
+  background-color: $indigo-dark;
+  color: white;
 
   h1 {
     margin: 0;
@@ -132,6 +120,7 @@
   height: 100px;
   justify-content: center;
   align-items: center;
+  margin: 30px;
 }
 
 .search {

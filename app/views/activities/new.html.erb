@@ -16,7 +16,7 @@
     <%= f.input :price %>
     <%= f.input :free, as: :boolean, checked_value: 'positive', unchecked_value: 'negative' %>
     <%= f.input :location %>
-    <%= f.input :photo, as: :file %>
+    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
 
     <div class="start-end-container">
       <%= f.input :start, as: :date, html5: true  %>

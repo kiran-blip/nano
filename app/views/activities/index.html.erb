@@ -1,5 +1,5 @@
 <div class="margin-container">
-  <h1>Activities </h1>
+  <h1>Activities</h1>
 
   <%= link_to "New Activity", new_activity_path %>
 
@@ -7,23 +7,25 @@
   <div class="container container-search">
     <div class="search">
       <div>
-        <%= form_with url: activities_path, method: :get, class: "d-flex" do %>
+        <%= form_with url: activities_path, method: :get, class: "d-flex search-form", html: {autocomplete: "off"} do %>
           <%= text_field_tag :query,
           params[:query],
           class: "form-control",
-          placeholder: "Find an activity"
+          placeholder: "Find an activity..."
           %>
-          <%= submit_tag "Search", class: "btn btn-primary" %>
-
+          <%#= submit_tag "Search", class: "button-search" %>
+          <%= button_tag(type: "submit", class: "button-search") do %>
+            <i class="fa-solid fa-lg fa-magnifying-glass"></i>
           <% end %>
-        </div>
+        <% end %>
       </div>
 
       <div class="overlay hidden">
       </div>
-      <button class="filter-button btn-open">
-          <i class="fa-solid fa-arrow-up-wide-short fa-4x"></i>
-          <h2>Filter</h2>
+
+      <button class="search-form btn-open" style="background-color: #e11d5e">
+          <i class="fa-solid fa-arrow-up-wide-short"></i>
+          Filter
       </button>
 
     </div>
@@ -68,27 +70,26 @@
 </section>
 
 <!-- index area -->
-<div>
-  <div class="margin-container">
-    <div class="cards-index">
-      <% @activities.each do |activity| %>
-      <!-- make a icard -->
-        <div class="card icard">
-          <a href="<%= activity_path(activity) %>">
-            <div class="icard-child">
-              <% if activity.photo.key.nil? %>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Bowlerbowling.JPG">
-              <% else %>
-                <%= cl_image_tag activity.photo.key %>
-              <% end %>
-              <div class="info">
-               <h5> <%= activity.name %></h5>
-              </div>
-            </div>
-          </a>
-        </div>
+<div class="margin-container">
+  <div class="category-card-container">
+    <% @activities.each do |activity| %>
+      <%= link_to activity_path(activity) do %>
+
+        <% if activity.photos.attached? %>
+          <div class="card-category card-border" style="background: url('<%= cl_image_path activity.photos[0].key %>'); background-size: cover">
+            <p class="centered"><%= activity.name %></p>
+          </div>
+        <% else %>
+          <div class="card-category">
+            <p class="centered"><%= activity.name %></p>
+          </div>
+        <% end %>
+          <!--<div class="info">
+            <h5> <%= activity.name %></h5>
+          </div>-->
+
       <% end %>
-    </div>
+    <% end %>
   </div>
 </div>
 <!-- /index area-->

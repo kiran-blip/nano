@@ -1,13 +1,26 @@
 class ActivitiesController < ApplicationController
   def index
+    searches = []
+
     # Refactor
+    if !params[:query].nil?
+      # @activities = Activity.search_all(params[:query])
+      searches.push("Activity.search_all(params[:query])")
+    elsif params[:query] == ""
+      searches.push("Activity.search_all(params[' '])")
+    end
+
     if params[:query].nil? && params[:tags].nil? && params[:min].nil? && params[:max].nil?
-      @activities = Activity.all
+      # @activities = Activity.all
+      searches.push("Activity.all")
+    end
 
-    elsif !params[:tags].nil?
-      @activities = Activity.search_by_tags(params[:tags])
+    if !params[:tags].nil?
+      # @activities = Activity.search_by_tags(params[:tags])
+      searches.push("Activity.search_by_tags(params[:tags])")
+    end
 
-    elsif !params[:min].nil? || !params[:max].nil?
+    if !params[:min].nil? || !params[:max].nil?
       if params[:min] == ""
         min_price = 0
       else
@@ -15,15 +28,17 @@ class ActivitiesController < ApplicationController
       end
 
       if params[:max] == ""
-        max_price = 0
+        max_price = 100_000_000
       else
         max_price = params[:max].to_i
       end
 
-      @activities = Activity.where(price: min_price..max_price)
-    else
-      @activities = Activity.search_by_name_and_description_and_tag_and_location_and_venue(params[:query])
+      # @activities = Activity.where(price: min_price..max_price)
+      range = "Activity.where(price: #{min_price}..#{max_price})"
+      searches.push(range)
     end
+
+    @activities = eval(searches.join(" & ")) # eval() is a serious security issue
   end
 
   def show
@@ -54,6 +69,7 @@ class ActivitiesController < ApplicationController
   private
 
   def activity_params
-    params.require(:activity).permit(:name, :description, :location, :price, :venue, :photo, tag:[])
+    params.require(:activity).permit(:name, :description, :location, :price, :venue, photos: [], tag:[])
   end
+
 end
