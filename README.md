@@ -1,1 +1,1 @@
-Rails app created by [kiran-blip](https://github.com/kiran-blip), [gloyens](https://github.com/gloyens), [JackB-101](https://github.com/JackB-101)) and [MichelleModest](https://github.com/MichelleModest).
+Rails app created by [kiran-blip](https://github.com/kiran-blip), [gloyens](https://github.com/gloyens), [JackB-101](https://github.com/JackB-101) and [MichelleModest](https://github.com/MichelleModest).
