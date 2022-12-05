@@ -54,6 +54,7 @@ class ActivitiesController < ApplicationController
         lng: @activity.longitude
       }
     end
+    @review = Review.new
   end
 
   def new

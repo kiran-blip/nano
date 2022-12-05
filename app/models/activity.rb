@@ -1,5 +1,6 @@
 class Activity < ApplicationRecord
   has_many :tags
+  has_many :reviews, dependent: :destroy
   has_many_attached :photos
   belongs_to :user
   geocoded_by :location
