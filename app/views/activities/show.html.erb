@@ -72,29 +72,52 @@
 
   <div class="reviews-container">
     <h2>Reviews</h2>
-    <div class="review-container">
-      <div class="space-between-container">
-        <h3 class="review-title">Title</h3>
-        <div class="review-rating">★★★★★</div>
-      </div>
-      <p class="review-description">This is a description.</p>
-    </div>
-
-    <div class="review-container">
-      <div class="space-between-container">
-        <h3 class="review-title">Title</h3>
-        <div class="review-rating">★★★★★</div>
-      </div>
-      <p class="review-description">This is a description.</p>
-    </div>
-
-    <div class="review-container">
-      <div class="space-between-container">
-        <h3 class="review-title">Title</h3>
-        <div class="review-rating">★★★★★</div>
-      </div>
-      <p class="review-description">This is a description.</p>
-    </div>
+    <% @activity.reviews.each do |review| %>
+    <li class = "list-group-item">
+        <div class="review-container">
+          <div class="space-between-container">
+            <h3 class="review-title"><%= review.title %></h3>
+              <small>
+                <% count = 0 %>
+                  <% 5.times do %>
+                    <% if review.rating > count %>
+                      <i class="fas fa-star"></i>
+                    <% else %>
+                      <i class="far fa-star"></i>
+                    <% end %>
+                  <% count += 1 %>
+                  <% end %>
+              </small>
+          </div>
+            <p class="review-description"><%= review.comment %></p>
+        </div>
+    </li>
+    <% end %>
   </div>
+
+    <%# <div class="review-container">
+      <div class="space-between-container">
+        <h3 class="review-title">Title</h3>
+        <div class="review-rating">★★★★★</div>
+      </div>
+      <p class="review-description">This is a description.</p>
+    </div>
+
+    <div class="review-container">
+      <div class="space-between-container">
+        <h3 class="review-title">Title</h3>
+        <div class="review-rating">★★★★★</div>
+      </div>
+      <p class="review-description">This is a description.</p>
+    </div> %>
+  <%# </div> %>
+
+<%= simple_form_for [@activity, @review] do |f| %>
+        <%= f.input :rating, collection: 0..5 %>
+        <%= f.input :title%>
+        <%= f.input :comment%>
+        <%= f.submit class: 'btn btn-primary' %>
+      <% end %>
+      <%= link_to "See all activities", activities_path %>
 
 </div>

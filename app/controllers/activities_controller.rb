@@ -50,6 +50,7 @@ class ActivitiesController < ApplicationController
         lng: @activity.longitude
       }
     end
+    @review = Review.new
   end
 
   def new
@@ -69,7 +70,7 @@ class ActivitiesController < ApplicationController
   private
 
   def activity_params
-    params.require(:activity).permit(:name, :description, :location, :price, :venue, photos: [], tag:[])
+    params.require(:activity).permit(:name, :description, :location, :price, :venue, photos: [], tag: [])
   end
 
 end
