@@ -2,7 +2,11 @@ class ActivitiesController < ApplicationController
   def index
     searches = []
 
-    # Refactor
+    # Refactor this by performing one nested search after another.
+    # For example, filter by the general search query, then *within that*,
+    # filter by tag.
+
+
     if !params[:query].nil?
       # @activities = Activity.search_all(params[:query])
       searches.push("Activity.search_all(params[:query])")
@@ -67,10 +71,16 @@ class ActivitiesController < ApplicationController
     end
   end
 
+  def destroy
+    @activity = Activity.find(params[:id])
+    @activity.destroy
+    redirect_to activities_path, status: :see_other
+  end
+
   private
 
   def activity_params
-    params.require(:activity).permit(:name, :description, :location, :price, :venue, photos: [], tag: [])
+    params.require(:activity).permit(:free, :booking, :start, :end, :name, :description, :location, :price, :venue, photos: [], tag: [])
   end
 
 end
