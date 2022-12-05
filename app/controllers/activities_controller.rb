@@ -1,8 +1,16 @@
 class ActivitiesController < ApplicationController
+  # before_action :authorize
+
   def index
+    @activities = policy_scope(Activity)
+
     searches = []
 
-    # Refactor
+    # Refactor this by performing one nested search after another.
+    # For example, filter by the general search query, then *within that*,
+    # filter by tag.
+
+
     if !params[:query].nil?
       # @activities = Activity.search_all(params[:query])
       searches.push("Activity.search_all(params[:query])")
@@ -42,6 +50,7 @@ class ActivitiesController < ApplicationController
   end
 
   def show
+
     @activities = Activity.all
     @activity = Activity.find(params[:id])
     @markers = @activities.geocoded.map do |a|
@@ -50,13 +59,19 @@ class ActivitiesController < ApplicationController
         lng: @activity.longitude
       }
     end
+
+    authorize @activity
+    @review = Review.new
+
   end
 
   def new
     @activity = Activity.new
+    authorize @activity
   end
 
   def create
+
     @activity = Activity.new(activity_params)
     @activity.user = current_user
     if @activity.save
@@ -64,12 +79,23 @@ class ActivitiesController < ApplicationController
     else
       render :new
     end
+
+    authorize @activity
+  end
+
+  def destroy
+
+    @activity = Activity.find(params[:id])
+    @activity.destroy
+    redirect_to activities_path, status: :see_other
+
+    authorize @activity
   end
 
   private
 
   def activity_params
-    params.require(:activity).permit(:name, :description, :location, :price, :venue, photos: [], tag:[])
+    params.require(:activity).permit(:free, :booking, :start, :end, :name, :description, :location, :price, :venue, photos: [], tag: [])
   end
 
 end

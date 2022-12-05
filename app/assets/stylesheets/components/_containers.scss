@@ -16,6 +16,16 @@
   h1 {
     font-size: 100px;
     margin: 0;
+    line-height: 70px;
+  }
+
+  h2 {
+    font-size: 60px;
+    margin: 0;
+    color: $indigo-light;
+    line-height: 60px;
+    padding-top: 10px;
+    padding-bottom: 40px;
   }
 
   p {
@@ -45,9 +55,13 @@
   }
 }
 
+.top-container {
+  margin: 50px 20%;
+}
+
 .explore-container {
   text-decoration: none;
-  margin: 0 20%;
+  margin: 0 15%;
 
   .categories-container {
     margin-bottom: 15px;
@@ -65,16 +79,17 @@
 }
 
 .margin-container {
-  width: 60%;
+  width: 90%;
   margin: auto;
   color: white;
 
   h1 {
     padding-top: 50px;
+    padding-bottom: 20px;
   }
 
   h3 {
-    padding: 30px 150px;
+    padding: 30px 100px;
   }
 }
 
@@ -114,20 +129,21 @@
 }
 
 .container-search {
+  max-width: 500px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   height: 100px;
   justify-content: center;
   align-items: center;
-  margin: 30px;
+  margin: 30px auto;
 }
 
 .search {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: left;
+  justify-content: center;
 }
 
 .filter {
@@ -180,4 +196,8 @@ a {
       margin-left: 0;
       padding: 0.375rem 5.25rem 0.375rem 4.75rem;
     }
+}
+
+.new-activity {
+  color: white;
 }

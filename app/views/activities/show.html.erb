@@ -5,34 +5,11 @@
 
 <div class="half-container">
 <div class="carousel-show" data-flickity='{ "pageDots":false, "wrapAround": true}'>
-  <%# activity.photos.each do |photo| %>
-    <%#= cl_image_tag photo.key  %>
-  <%# end  %>
-  <!--carousel cell-->
-  <div class="carousel-cell-show">
-    <img class="w3-image" src="https://cdn.shopify.com/s/files/1/0602/0707/1381/products/Frida-by-Sannib.png?v=1666184510">
-  </div>
 
-  <!--carousel cell-->
-  <div class="carousel-cell-show">
-    <img class="w3-image" src="https://m.media-amazon.com/images/I/51BL4Cpt8tL._AC_.jpg">
-  </div>
+  <% @activity.photos.each do |photo| %>
+    <%= cl_image_tag photo.key %>
+  <% end %>
 
-  <!--carousel cell-->
-  <div class="carousel-cell-show">
-    <img class="w3-image" src="https://secure.img1-cg.wfcdn.com/im/25508192/resize-h445%5Ecompr-r85/1731/173123074/Flowers+Garden+by+Gustav+Klimt+-+Wrapped+Canvas+Painting.jpg">
-  </div>
-
-  <!--carousel cell-->
-  <div class="carousel-cell-show">
-    <img class="w3-image" src="https://litb-cgis.rightinthebox.com/images/640x640/202109/bps/product/inc/ahijyf1630925030997.jpg">
-  </div>
-
-
-  <!--carousel cell-->
-  <div class="carousel-cell-show">
-    <img class="w3-image" src="https://m.media-amazon.com/images/I/61Jle4M4CGL._AC_SX679_.jpg">
-  </div>
 </div>
 
   <div class="activity-info-container">
@@ -41,23 +18,66 @@
       <h2>£<%= @activity.price %></h2>
     </div>
 
-    <div class="space-between-container">
-      <div class="rating-container">★★★★★</div>
-      <div class="widgets-container">
-        <a href="#" class="button-circle">💖</a>
-        <a href="#" class="button-circle">🔗</a>
-      </div>
-    </div>
 
+
+
+    <a href="#" class="button-circle">💖</a>
+    <span href="#" class="button-circle btn-open">🔗</span>
+
+    <div class="overlay hidden"></div>
+    <section class="modal hidden">
+      <div class="flex">
+        <img src="https://avatars.githubusercontent.com/u/62628408?s=96&v=4" width="50px" height="50px" alt="user" />
+        <button class="btn-close">❌</button>
+      </div>
+      <div>
+        <h3>Share this activity</h3>
+        <p>Copy and paste the link below to share this activity with your friends</p>
+      </div>
+      <div class="input-group" data-controller="clipboard" data-clipboard-feedback-text-value="Copied!">
+         <input class="form-control" data-clipboard-target="input" type="text" value="<%= request.original_url %>" readonly>
+      <div class="input-group-append">
+          <button id="copy-button" class="btn btn-outline-primary" data-action="click->clipboard#copy">Copy to Clipboard</button>
+      </div>
+  </div>
+
+    <div>
+      <%=
+        social_share_button_tag(request.original_url,
+                    {
+              :title => "Check out this page!",
+              :text => "This page is really cool, you should check it out!",
+              :image => "http://www.example.com/image.png"
+            })%>
+      </div>
+
+    </section>
 
     <p class="description"><%= @activity.description %></p>
+
+
+    <%= link_to "Delete",
+      activity_path(@activity),
+      class: "button-main",
+      data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} if policy(@activity).destroy?
+    %>
     <hr>
 
-    <!--div class="tags-container">
+    <div class="tags-container">
       <% @activity.tag.each do |tag| %>
         <a href="<%= activities_path(tags: tag) %>" class="show-tag"><%= tag %></a>
       <% end %>
-    </div-->
+    </div>
+
+    <div class="tags-container-alt">
+      <% if @activity.free %>
+        <a href="<%= activities_path(tags: tag) %>" class="show-tag">Free</a>
+      <% end %>
+
+      <% if !@activity.booking %>
+        <a href="<%= activities_path(tags: tag) %>" class="show-tag">No booking</a>
+      <% end %>
+    </div>
 
   </div>
 </div>
@@ -72,29 +92,52 @@
 
   <div class="reviews-container">
     <h2>Reviews</h2>
-    <div class="review-container">
-      <div class="space-between-container">
-        <h3 class="review-title">Title</h3>
-        <div class="review-rating">★★★★★</div>
-      </div>
-      <p class="review-description">This is a description.</p>
-    </div>
-
-    <div class="review-container">
-      <div class="space-between-container">
-        <h3 class="review-title">Title</h3>
-        <div class="review-rating">★★★★★</div>
-      </div>
-      <p class="review-description">This is a description.</p>
-    </div>
-
-    <div class="review-container">
-      <div class="space-between-container">
-        <h3 class="review-title">Title</h3>
-        <div class="review-rating">★★★★★</div>
-      </div>
-      <p class="review-description">This is a description.</p>
-    </div>
+    <% @activity.reviews.each do |review| %>
+    <li class = "list-group-item">
+        <div class="review-container">
+          <div class="space-between-container">
+            <h3 class="review-title"><%= review.title %></h3>
+              <small>
+                <% count = 0 %>
+                  <% 5.times do %>
+                    <% if review.rating > count %>
+                      <i class="fas fa-star"></i>
+                    <% else %>
+                      <i class="far fa-star"></i>
+                    <% end %>
+                  <% count += 1 %>
+                  <% end %>
+              </small>
+          </div>
+            <p class="review-description"><%= review.comment %></p>
+        </div>
+    </li>
+    <% end %>
   </div>
+
+    <%# <div class="review-container">
+      <div class="space-between-container">
+        <h3 class="review-title">Title</h3>
+        <div class="review-rating">★★★★★</div>
+      </div>
+      <p class="review-description">This is a description.</p>
+    </div>
+
+    <div class="review-container">
+      <div class="space-between-container">
+        <h3 class="review-title">Title</h3>
+        <div class="review-rating">★★★★★</div>
+      </div>
+      <p class="review-description">This is a description.</p>
+    </div> %>
+  <%# </div> %>
+
+<%= simple_form_for [@activity, @review] do |f| %>
+        <%= f.input :rating, collection: 0..5 %>
+        <%= f.input :title%>
+        <%= f.input :comment%>
+        <%= f.submit class: 'btn btn-primary' %>
+      <% end %>
+      <%= link_to "See all activities", activities_path %>
 
 </div>
