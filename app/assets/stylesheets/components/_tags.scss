@@ -11,4 +11,13 @@
 
 .tags-container {
   padding: 0;
+  padding-bottom: 10px;
+}
+
+.tags-container-alt {
+  padding: 0;
+
+  .show-tag {
+    background-color: $green;
+  }
 }
