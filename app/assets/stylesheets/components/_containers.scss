@@ -16,6 +16,16 @@
   h1 {
     font-size: 100px;
     margin: 0;
+    line-height: 70px;
+  }
+
+  h2 {
+    font-size: 60px;
+    margin: 0;
+    color: $indigo-light;
+    line-height: 60px;
+    padding-top: 10px;
+    padding-bottom: 40px;
   }
 
   p {
@@ -114,20 +124,21 @@
 }
 
 .container-search {
+  max-width: 500px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   height: 100px;
   justify-content: center;
   align-items: center;
-  margin: 30px;
+  margin: 30px auto;
 }
 
 .search {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: left;
+  justify-content: center;
 }
 
 .filter {

@@ -8,7 +8,7 @@
 
   <div class="lettering-container">
     <h1>nano</h1>
-    <p>non-alcoholic nights out</p>
+    <h2>non-alcoholic<br>nights out</h2>
     <%= form_with url: activities_path, method: :get, class: "d-flex search-form", html: {autocomplete: "off"} do %>
       <%= text_field_tag :query,
       params[:query],
@@ -27,11 +27,15 @@
   <div class="margin-container"><h3>tonight</h3></div>
   <div class="carousel-home" data-flickity='{ "wrapAround": true, "autoPlay": true, "pageDots": false}'>
 
-    <% 10.times do %>
-      <%= link_to "#" do %>
+    <% Activity.all[-10..-1].each do |activity| %>
+      <%= link_to activity_path(activity) do %>
         <div class="card-category card-border carousel-cell-home">
-          <p class="carousel-centered">Activity Name</p>
-          <img class="w3-image" src="https://m.media-amazon.com/images/I/51BL4Cpt8tL._AC_.jpg">
+          <p class="carousel-centered"><%= activity.name %></p>
+
+          <% if activity.photos.attached? %>
+            <img class="w3-image" src="<%= cl_image_path activity.photos[0].key %>">
+          <% end %>
+
         </div>
       <% end %>
     <% end %>
