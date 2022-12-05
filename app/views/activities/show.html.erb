@@ -40,9 +40,7 @@
       <% if @activity.free %>
         <a href="<%= activities_path(tags: tag) %>" class="show-tag">Free</a>
       <% end %>
-    </div>
 
-    <div class="tags-container-alt">
       <% if !@activity.booking %>
         <a href="<%= activities_path(tags: tag) %>" class="show-tag">No booking</a>
       <% end %>
