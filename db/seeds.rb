@@ -114,6 +114,21 @@ Activity.create!(
 )
 
 Activity.create!(
+  name: "Hartley's Irish Folk Music",
+  description: "Hartley's is London’s homiest Irish bar located at 14 Putnam Ave. in the Hoxton area. At Hartley's, we pride ourselves on the warmth of Irish hospitality, great quality product and a place where neighbors can meet and chat in our cozy shebeen. Our food menu consists of the best locally sourced fresh ingredients, daily baked Irish soda bread. We serve a vast array of drink, local craft beer, well-crafted cocktails, and premium liquor. Live traditional Irish music every Monday at 8pm, with local musicians coming round to play together and sing.",
+  tag: ["music"],
+  price: 0,
+  image: "https://upload.wikimedia.org/wikipedia/commons/4/4b/Bowlerbowling.JPG",
+  start: DateTime.new(2022,12,2),
+  end: DateTime.new(2022,12,2),
+  location: "Hoxton",
+  free: true,
+  venue: "Hartleys",
+  booking: false,
+  user_id: User.all[2].id.to_i
+)
+
+Activity.create!(
   name: "Running",
   description: "Running is a method of terrestrial locomotion allowing humans and other animals to move rapidly on foot.",
   tag: ["sport"],
