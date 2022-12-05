@@ -27,7 +27,9 @@
   <div class="margin-container"><h3>tonight</h3></div>
   <div class="carousel-home" data-flickity='{ "wrapAround": true, "autoPlay": true, "pageDots": false}'>
 
+
   <% Activity.all.each do |activity| %>
+
       <%= link_to activity_path(activity) do %>
         <div class="card-category card-border carousel-cell-home">
           <p class="carousel-centered"><%= activity.name %></p>
@@ -44,54 +46,53 @@
 </div>
 
 
-<div class="margin-container"><h3>popular</h3></div>
 <div class="explore-container">
+  <div class="margin-container"><h3>popular</h3></div>
 
   <div class="category-card-container">
-    <%= link_to activities_path(query: "sport") do %>
-      <div class="card-category" style="background-image: url(<%= asset_path 'sport.png' %>);">
-        <p>sport</p>
-      </div>
-    <% end %>
-
-    <%= link_to activities_path(query: "nature") do %>
-      <div class="card-category" style="background-image: url(<%= asset_path 'nature.png' %>);">
-        <p>nature</p>
-      </div>
-    <% end %>
-
-    <%= link_to activities_path(query: "animals") do %>
-      <div class="card-category" style="background-image: url(<%= asset_path 'animals.png' %>);">
-        <p>animals</p>
-      </div>
-    <% end %>
-
-    <%= link_to activities_path(query: "music") do %>
-      <div class="card-category" style="background-image: url(<%= asset_path 'music.png' %>);">
-        <p>music</p>
-      </div>
-    <% end %>
-
-    <%= link_to activities_path(query: "art") do %>
-      <div class="card-category" style="background-image: url(<%= asset_path 'art.png' %>);">
-        <p>art</p>
-      </div>
-    <% end %>
-
-    <%= link_to activities_path(query: "fun") do %>
-      <div class="card-category" style="background-image: url(<%= asset_path 'misc.png' %>);">
-        <p>fun</p>
-      </div>
-    <% end %>
-
-    <!-- Previous version of card
-    <%= link_to activities_path(query: "team") do %>
-    <div class="card-category" style="background-image: linear-gradient(rgba(255,0,0,0), rgba(,0,0,1)), url('https://assets.entrepreneur.com/content/3x2/2000/20151215195453-business-leader-group-front-leadership-team-professionals-businesspeople.jpeg');">
-    <p>team</p>
-      <%# <img class="genre-image" src="https://assets.entrepreneur.com/content/3x2/2000/20151215195453-business-leader-group-front-leadership-team-professionals-businesspeople.jpeg"> %>
+  <%= link_to activities_path(query: "sport") do %>
+    <div class="card-category" style="background-image: url(<%= asset_path 'sport.png' %>);">
+      <p>sport</p>
     </div>
-    <% end %>-->
+  <% end %>
+
+  <%= link_to activities_path(query: "nature") do %>
+    <div class="card-category" style="background-image: url(<%= asset_path 'nature.png' %>);">
+      <p>nature</p>
+    </div>
+  <% end %>
+
+  <%= link_to activities_path(query: "animals") do %>
+    <div class="card-category" style="background-image: url(<%= asset_path 'animals.png' %>);">
+      <p>animals</p>
+    </div>
+  <% end %>
+
+  <%= link_to activities_path(query: "music") do %>
+    <div class="card-category" style="background-image: url(<%= asset_path 'music.png' %>);">
+      <p>music</p>
+    </div>
+  <% end %>
+
+  <%= link_to activities_path(query: "art") do %>
+    <div class="card-category" style="background-image: url(<%= asset_path 'art.png' %>);">
+      <p>art</p>
+    </div>
+  <% end %>
+
+  <%= link_to activities_path(query: "fun") do %>
+    <div class="card-category" style="background-image: url(<%= asset_path 'misc.png' %>);">
+      <p>fun</p>
+    </div>
+  <% end %>
+
+  <!-- Previous version of card
+  <%= link_to activities_path(query: "team") do %>
+  <div class="card-category" style="background-image: linear-gradient(rgba(255,0,0,0), rgba(,0,0,1)), url('https://assets.entrepreneur.com/content/3x2/2000/20151215195453-business-leader-group-front-leadership-team-professionals-businesspeople.jpeg');">
+  <p>team</p>
+    <%# <img class="genre-image" src="https://assets.entrepreneur.com/content/3x2/2000/20151215195453-business-leader-group-front-leadership-team-professionals-businesspeople.jpeg"> %>
   </div>
+  <% end %>-->
 </div>
 
 <div class="margin-container"><h3>near me</h3>
@@ -109,6 +110,45 @@
   </div>
 </div>
 
+<div class="margin-container"><h3>neighbourhoods</h3></div>
+
+<div class="category-card-container">
+  <%= link_to activities_path(query: "camden+town") do %>
+    <div class="card-category card-border full-bg" style="background-image: linear-gradient(rgba(255,0,0,0), rgba(,0,0,1)), url('https://cdn.londonandpartners.com/asset/camden-lock_camden-lock-visitlondoncomjon-reid_dd307875a92eeed0e4f7d39b643079b2.jpg');">
+      <p>Camden Town</p>
+    </div>
+  <% end %>
+
+  <%= link_to activities_path(query: "shoreditch") do %>
+    <div class="card-category card-border full-bg" style="background-image: linear-gradient(rgba(255,0,0,0), rgba(,0,0,1)), url('https://media.cntraveller.com/photos/611bea7e80db5ca184e70bfe/16:9/w_2580,c_limit/people-drinking-truman-brewery-brick-lane-shoreditch-london-conde-nast-traveller-28sept17-alamy.jpg');">
+      <p>Shoreditch</p>
+    </div>
+  <% end %>
+
+  <%= link_to activities_path(query: "soho") do %>
+    <div class="card-category card-border full-bg" style="background-image: linear-gradient(rgba(255,0,0,0), rgba(,0,0,1)), url('https://cdn.londonandpartners.com/-/media/images/london/visit/things-to-do/london-areas/soho/soho-street-640x360.jpg?mw=640&hash=9975F9A56B81438A49F6AD5EF0C8C64F0D281E22');">
+      <p>Soho</p>
+    </div>
+  <% end %>
+
+  <%= link_to activities_path(query: "brixton") do %>
+    <div class="card-category card-border full-bg" style="background-image: linear-gradient(rgba(255,0,0,0), rgba(,0,0,1)), url('https://media.timeout.com/images/105172377/750/422/image.jpg');">
+      <p>Brixton</p>
+    </div>
+  <% end %>
+
+  <%= link_to activities_path(query: "notting+hill") do %>
+    <div class="card-category card-border full-bg" style="background-image: linear-gradient(rgba(255,0,0,0), rgba(,0,0,1)), url('https://cdn.londonandpartners.com/-/media/images/london/visit/things-to-do/london-areas/notting-hill/notting-hill-london-portobello-market.jpg?mw=640&hash=FD1DE092B6EA0EA3A3E094506084057595ECEDD7');">
+      <p>Notting Hill</p>
+    </div>
+  <% end %>
+
+  <%= link_to activities_path(query: "kings+cross",) do %>
+    <div class="card-category card-border full-bg" style="background-image: linear-gradient(rgba(255,0,0,0), rgba(,0,0,1)), url('https://cdn.londonandpartners.com/asset/coal-drops-yard_coal-drops-yard-photo-by-john-sturrock-image-courtesy-of-purple_f1048746cd5d57b9a7909488b205d47f.jpg');">
+      <p>King's Cross</p>
+    </div>
+  <% end %>
+</div>
 
 <%# <%= link_to "sport", activities_path(tag: "sport") %>
 <%# activities?query=Safe+senders+list&commit=Search %>

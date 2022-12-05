@@ -15,3 +15,6 @@ application.register("tom-select", TomSelectController)
 
 import ModalController from "./modal_controller"
 application.register("modal", ModalController)
+
+import ClipboardController from "./clipboard_controller"
+application.register("clipboard", ClipboardController)
