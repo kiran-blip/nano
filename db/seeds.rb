@@ -1,3 +1,4 @@
+User.destroy_all
 User.create! email: "kiran@nedumkallel.co.uk", password: "password"
 
 
