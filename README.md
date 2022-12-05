@@ -1,1 +1,1 @@
-Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
+Rails app created by [kiran-blip](https://github.com/kiran-blip), [gloyens](https://github.com/gloyens), [JackB-101](https://github.com/JackB-101)) and [MichelleModest](https://github.com/MichelleModest).
