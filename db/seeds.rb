@@ -123,9 +123,10 @@ Activity.create!(
   end: DateTime.new(2022,12,2),
   location: "Hoxton",
   free: true,
-  venue: Hartley's,
+  venue: "Hartleys",
   booking: false,
   user_id: User.all[2].id.to_i
+)
 
 Activity.create!(
   name: "Running",
