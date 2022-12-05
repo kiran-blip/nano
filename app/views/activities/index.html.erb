@@ -1,7 +1,9 @@
 <div class="margin-container">
-  <h1>Activities</h1>
 
-  <%= link_to "New Activity", new_activity_path, class: "button-main" %>
+  <div class="top-container">
+    <h1>Activities</h1>
+    <%= link_to "New Activity", new_activity_path, class: "button-main" %>
+  </div>
 
   <!-- filter and search section -->
   <div class="container container-search">
@@ -71,7 +73,7 @@
 
 <!-- index area -->
 <div class="margin-container">
-  <div class="category-card-container">
+  <div class="index-card-container">
     <% @activities.each do |activity| %>
       <%= link_to activity_path(activity) do %>
 
