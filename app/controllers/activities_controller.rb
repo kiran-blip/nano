@@ -61,6 +61,8 @@ class ActivitiesController < ApplicationController
     end
 
     authorize @activity
+    @review = Review.new
+
   end
 
   def new
