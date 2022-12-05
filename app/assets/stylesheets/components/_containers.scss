@@ -55,9 +55,13 @@
   }
 }
 
+.top-container {
+  margin: 50px 20%;
+}
+
 .explore-container {
   text-decoration: none;
-  margin: 0 20%;
+  margin: 0 15%;
 
   .categories-container {
     margin-bottom: 15px;
@@ -75,16 +79,17 @@
 }
 
 .margin-container {
-  width: 60%;
+  width: 90%;
   margin: auto;
   color: white;
 
   h1 {
     padding-top: 50px;
+    padding-bottom: 20px;
   }
 
   h3 {
-    padding: 30px 150px;
+    padding: 30px 100px;
   }
 }
 
