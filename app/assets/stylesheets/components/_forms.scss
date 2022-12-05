@@ -25,3 +25,31 @@
     }
   }
 }
+
+.search-outline {
+  height: 50px;
+  min-width: 50px;
+  border-radius: 25px;
+  padding: 0 10px;
+  margin: 8px;
+
+  background-color: none;
+  border: 3px solid $blue;
+  color: white;
+
+  .form-control {
+    background-color: transparent;
+    border: none;
+    color: white;
+
+    &::placeholder {
+      color: rgba(255,255,255,0.7);
+    }
+
+    &:focus {
+      border: none;
+      box-shadow: none;
+      background-color: transparent;
+    }
+  }
+}

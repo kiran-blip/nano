@@ -7,7 +7,7 @@
   <div class="container container-search">
     <div class="search">
       <div>
-        <%= form_with url: activities_path, method: :get, class: "d-flex search-form", html: {autocomplete: "off"} do %>
+        <%= form_with url: activities_path, method: :get, class: "d-flex search-outline", html: {autocomplete: "off"} do %>
           <%= text_field_tag :query,
           params[:query],
           class: "form-control",
@@ -23,7 +23,7 @@
       <div class="overlay hidden">
       </div>
 
-      <button class="search-form btn-open" style="background-color: #e11d5e">
+      <button class="search-form btn-open">
           <i class="fa-solid fa-arrow-up-wide-short"></i>
           Filter
       </button>
@@ -84,9 +84,6 @@
             <p class="centered"><%= activity.name %></p>
           </div>
         <% end %>
-          <!--<div class="info">
-            <h5> <%= activity.name %></h5>
-          </div>-->
 
       <% end %>
     <% end %>
