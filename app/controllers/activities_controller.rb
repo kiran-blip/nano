@@ -64,13 +64,11 @@ class ActivitiesController < ApplicationController
   end
 
   def new
-    authorize @activity
-
     @activity = Activity.new
+    authorize @activity
   end
 
   def create
-    authorize @activity
 
     @activity = Activity.new(activity_params)
     @activity.user = current_user
@@ -79,14 +77,17 @@ class ActivitiesController < ApplicationController
     else
       render :new
     end
+
+    authorize @activity
   end
 
   def destroy
-    authorize @activity
 
     @activity = Activity.find(params[:id])
     @activity.destroy
     redirect_to activities_path, status: :see_other
+
+    authorize @activity
   end
 
   private
