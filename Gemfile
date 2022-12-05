@@ -82,3 +82,5 @@ gem "geocoder"
 gem "pg_search"
 
 gem "cloudinary"
+
+gem 'social-share-button'
