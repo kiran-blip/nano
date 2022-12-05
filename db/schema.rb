@@ -53,7 +53,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_01_172237) do
     t.string "location"
     t.boolean "free"
     t.string "venue"
-    t.boolean "booking"
+    t.boolean "booking" # booking required
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
