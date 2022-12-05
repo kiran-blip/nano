@@ -1,7 +1,7 @@
 <div class="margin-container">
   <h1>Activities</h1>
 
-  <%= link_to "New Activity", new_activity_path %>
+  <div style="background-color: white"><%= link_to "New Activity", new_activity_path %></div>
 
   <!-- filter and search section -->
   <div class="container container-search">
@@ -40,9 +40,8 @@
 <%# this is the modal container %>
 
 <section class="modal hidden">
-  <div class="flex">
-    <img src="https://avatars.githubusercontent.com/u/62628408?s=96&v=4" width="50px" height="50px" alt="user" />
-    <button class="btn-close">❌</button>
+  <div class="x-container">
+    <button class="btn-close fa-solid fa-xmark"></button>
   </div>
   <div>
 
@@ -53,6 +52,22 @@
                             params[:query],
                             class: "form-control",
                             placeholder: "Search" %>
+        <%= text_field_tag :query,
+                            params[:query],
+                            class: "form-control",
+                            placeholder: "Neighbourhood" %>
+        <form action="/action_page.php">
+          <div class="checkbox-container">
+            <div class="free-checkbox">
+              <input type="checkbox" id="check-box-1" name="check-box-1" value="Free">
+              <label for="check-box-1"> Free </label><br>
+            </div>
+            <div class="no-booking-checkbox">
+              <input type="checkbox" id="check-box-2" name="check-box-2" value="No-booking">
+              <label for="check-box-2"> No booking required </label><br>
+            </div>
+          </div>
+        </form>
         <%= text_field_tag :min,
                             params[:min],
                             class: "form-control",

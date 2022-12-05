@@ -11,9 +11,63 @@
   top: 20%;
   left: 35%;
   z-index: 4;
-  background-color: white;
-  border: 1px solid #ddd;
+  background-color: $indigo-light;
+  // border: 1px solid #ddd;
   border-radius: 15px;
+
+  .modal-form {
+    flex-direction: column;
+  }
+
+  .form-control {
+    margin: 17px 0px;
+    margin-top: 0px;
+    color: white;
+    background-color: #3e2f5b;
+    background-clip: padding-box;
+    border: 2px solid #5b3a7f;
+
+     &::placeholder {
+      color: rgba(255,255,255,0.7);
+    }
+  }
+
+  #min {
+    margin-top: 16px;
+  }
+
+  .btn {
+    background-color: #7841f3;
+    margin-top: 31px;
+  }
+
+}
+
+.checkbox-container {
+  accent-color: $blue;
+  color: white;
+
+  // input[type=checkbox] {
+
+  // }
+
+  .main input:active{
+    background-color: $indigo-dark;
+  }
+
+  .main input:not(:active){
+    color: $indigo-dark;
+  }
+
+  .main input:checked {
+    background-color: $indigo-light;
+  }
+
+  // form_with input[type="checkbox"] {
+  //   color: blue;
+  // }
+
+
 }
 
 .modal .flex {
@@ -24,7 +78,6 @@
 
 .modal input {
   padding: 0.7rem 1rem;
-  border: 1px solid #ddd;
   border-radius: 5px;
   font-size: 0.9em;
 }
@@ -52,14 +105,17 @@ button {
   font-size: 1em;
 }
 
-.btn-open {
-
+.x-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 18px;
+  margin-right: 7px;
 }
 
 .btn-close {
   transform: translate(10px, -20px);
-  padding: 0.5rem 0.7rem;
-  background: #eee;
+  padding: 0.5rem 0.5rem;
+  background: #5b3a7f;
   border-radius: 50%;
 }
 
@@ -78,8 +134,4 @@ button {
 
 .hidden {
   display: none;
-}
-
-.modal-form {
-  flex-direction: column;
 }
