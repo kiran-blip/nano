@@ -14,7 +14,7 @@
       include_hidden: false
     %>
     <%= f.input :price %>
-    <%= f.input :free, as: :boolean, checked_value: 'positive', unchecked_value: 'negative' %>
+    <%= f.input :free, as: :boolean %>
     <%= f.input :location %>
     <%= f.input :photos, as: :file, input_html: { multiple: true } %>
 
@@ -24,7 +24,7 @@
     </div>
 
     <%= f.input :venue %>
-    <%= f.input :booking, as: :boolean, checked_value: 'positive', unchecked_value: 'negative' %>
+    <%= f.input :booking, as: :boolean %>
     <div class="form-actions btn-container">
       <%= f.button :submit, "Create Activity", class: "button-primary" %>
     </div>
