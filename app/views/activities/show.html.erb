@@ -29,10 +29,9 @@
 
     <p class="description"><%= @activity.description %></p>
 
-    <%= link_to "Delete",
-      activity_path(@activity),
-      data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},
-      class: "button-main"
+    <%= button_to "Delete",
+      @activity, class: "button-main",
+      method: :delete if policy(@activity).destroy?
     %>
     <hr>
 

@@ -1,5 +1,9 @@
 class ActivitiesController < ApplicationController
+  # before_action :authorize
+
   def index
+    @activities = policy_scope(Activity)
+
     searches = []
 
     # Refactor this by performing one nested search after another.
@@ -46,6 +50,7 @@ class ActivitiesController < ApplicationController
   end
 
   def show
+
     @activities = Activity.all
     @activity = Activity.find(params[:id])
     @markers = @activities.geocoded.map do |a|
@@ -54,14 +59,21 @@ class ActivitiesController < ApplicationController
         lng: @activity.longitude
       }
     end
+
+    authorize @activity
     @review = Review.new
+
   end
 
   def new
+    authorize @activity
+
     @activity = Activity.new
   end
 
   def create
+    authorize @activity
+
     @activity = Activity.new(activity_params)
     @activity.user = current_user
     if @activity.save
@@ -72,6 +84,8 @@ class ActivitiesController < ApplicationController
   end
 
   def destroy
+    authorize @activity
+
     @activity = Activity.find(params[:id])
     @activity.destroy
     redirect_to activities_path, status: :see_other
