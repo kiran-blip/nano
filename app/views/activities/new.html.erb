@@ -1,9 +1,7 @@
 <div class="new-activity form-container">
   <div class="logo-title-container">
   <h1>New Activity</h1>
-    <div class="icon-container">
-      <%= image_tag "", alt: "Logo" %>
-    </div>
+
   </div>
   <%= simple_form_for(@activity) do |f| %>
     <%= f.input :name %>
@@ -24,9 +22,9 @@
     </div>
 
     <%= f.input :venue %>
-    <%= f.input :booking, as: :boolean %>
-    <div class="form-actions btn-container">
-      <%= f.button :submit, "Create Activity", class: "button-primary" %>
+    <%= f.input :booking, as: :boolean, label: "Booking required" %>
+    <div class="form-actions">
+      <%= submit_tag "Create Activity", class: "button-main" %>
     </div>
   <% end %>
 

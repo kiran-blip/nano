@@ -1,14 +1,27 @@
-<h1>My Likes</h1>
+<div class="half-container">
+  <div class="likes-container">
+    <h2>My Likes</h2>
 
+    <div class="index-card-container">
+      <% @user.favorites.each do |favorite| %>
+        <%= link_to favorite.favoritable do %>
 
-<% @user.favorites.each do |favorite| %>
-  <%= link_to favorite.favoritable.name, favorite.favoritable %>
-<% end %>
+          <% if favorite.favoritable.photos.attached? %>
+            <div class="card-category card-border" style="background: url('<%= cl_image_path favorite.favoritable.photos[0].key %>'); background-size: cover">
+              <p class="centered"><%= favorite.favoritable.name %></p>
+            </div>
+          <% else %>
+            <div class="card-category">
+              <p class="centered"><%= favorite.favoritable.name %></p>
+            </div>
+          <% end %>
 
+        <% end %>
+      <% end %>
+    </div>
 
+  </div>
 
-
-<div class="margin-container">
   <div class="profile-container">
     <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
@@ -36,13 +49,11 @@
       </div>
 
       <div class="form-actions">
-        <%= f.button :submit, "Update" %>
+        <%= submit_tag "Update", class: "button-main" %>
       </div>
     <% end %>
 
-    <div class="d-flex align-items-center">
-      <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-link" %>
-    </div>
+      <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "button-secondary" %>
 
     <%= link_to "Back", :back %>
   </div>
