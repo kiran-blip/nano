@@ -46,7 +46,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_06_104029) do
     t.string "name"
     t.string "description"
     t.text "tag", default: [], array: true
-    t.integer "price"
+    t.integer "price", default: 0
     t.string "image"
     t.datetime "start"
     t.datetime "end"
