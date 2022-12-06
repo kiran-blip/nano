@@ -18,9 +18,15 @@
       <h2>£<%= @activity.price %></h2>
     </div>
 
+    <% if current_user.favorited?(@activity) %>
+      <p>You have already liked this activity.</p>
+    <% else %>
+      <%= form_for @activity, url: favorite_activity_path(@activity) do |f| %>
+        <%= f.submit "Like" %>
+      <% end %>
+      <%= link_to "Like2", favorite_activity_path(@activity) %>
+    <% end %>
 
-
-    <a href="#" class="button-circle" data-controller="button-circle" data-action="click->button-circle#changeButton">💖</a>
     <span href="#" class="button-circle btn-open">🔗</span>
 
     <div class="overlay hidden"></div>

@@ -7,7 +7,7 @@ export default class extends Controller {
   }
 
   connect() {
-    console.log("connectedted clipbooard")
+    console.log("connected clipboard")
   }
 
   copy(event) {

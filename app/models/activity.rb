@@ -1,4 +1,5 @@
 class Activity < ApplicationRecord
+  acts_as_favoritable
   has_many :tags
   has_many :reviews, dependent: :destroy
   has_many_attached :photos
