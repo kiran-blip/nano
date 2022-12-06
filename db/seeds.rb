@@ -222,7 +222,7 @@ myo.save
 
 
 soccer = Activity.create!(
-  name: "Soccer in the park",
+  name: "Football in the park",
   description: "",
   tag: ["sport", "nature"],
   price: 0,
@@ -286,7 +286,7 @@ figure = Activity.create!(
   image: "https://images.squarespace-cdn.com/content/v1/59b2cb9812abd93aa29dc90a/1630165089633-GIC9DEHAXPLOZ6QGX9PJ/FigureDrawing_Winter_2020.jpg?format=1000w",
   start: DateTime.new(2022,12,2),
   end: DateTime.new(2022,12,2),
-  location: "Camden",
+  location: "Camden Town",
   free: false,
   venue: "",
   booking: true,
@@ -473,4 +473,21 @@ file1 = URI.open("https://www.varsity.co.uk/images/dyn/store/465/0/23034.jpeg")
 jazz.photos.attach(io: file1, filename: "jazz.jpg", content_type: "image/jpg")
 jazz.save
 
+jam = Activity.create!(
+  name: "Art Jam - painting on textiles",
+  description: "",
+  tag: ["art"],
+  price: 15,
+  image: "http://cdn.shopify.com/s/files/1/0260/9971/2105/files/DIY_Tote_Bag_Painting_Kit_480x480.jpg?v=1592383336",
+  start: DateTime.new(2022,12,1),
+  end: DateTime.new(2022,12,4),
+  location: "King's Cross",
+  free: true,
+  venue: nil,
+  booking: true,
+  user_id: User.all[0].id.to_i
+)
 
+file1 = URI.open("http://cdn.shopify.com/s/files/1/0260/9971/2105/files/DIY_Tote_Bag_Painting_Kit_480x480.jpg?v=1592383336")
+jam.photos.attach(io: file1, filename: "jam.jpg", content_type: "image/jpg")
+jam.save
