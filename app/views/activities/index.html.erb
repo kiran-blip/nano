@@ -47,29 +47,27 @@
   </div>
   <div>
 
- 
+
     <div>
       <%= form_with url: activities_path, method: :get, class: "d-flex modal-form" do %>
         <%= text_field_tag :query,
                             params[:query],
                             class: "form-control",
                             placeholder: "Search" %>
-        <%= text_field_tag :query,
-                            params[:query],
+        <%= text_field_tag :area,
+                            params[:area],
                             class: "form-control",
                             placeholder: "Neighbourhood" %>
-        <form action="/action_page.php">
-          <div class="checkbox-container">
-            <div class="free-checkbox">
-              <input type="checkbox" id="check-box-1" name="check-box-1" value="Free">
-              <label for="check-box-1"> Free </label><br>
-            </div>
-            <div class="no-booking-checkbox">
-              <input type="checkbox" id="check-box-2" name="check-box-2" value="No-booking">
-              <label for="check-box-2"> No booking required </label><br>
-            </div>
-          </div>
-        </form>
+        <div class="checkbox-container">
+          <%= label_tag "free", "Free" %>
+          <%= check_box_tag :free,
+                            class: "free-checkbox" %>
+        </div>
+        <div class="checkbox-container">
+          <%= label_tag "no_booking", "No booking required" %>
+          <%= check_box_tag :no_booking,
+                            class: "no-booking-checkbox" %>
+        </div>
         <%= text_field_tag :min,
                             params[:min],
                             class: "form-control",
