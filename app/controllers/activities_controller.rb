@@ -11,11 +11,11 @@ class ActivitiesController < ApplicationController
     # filter by tag.
 
     # GENERAL SEARCH
-    if !params[:query].nil?
+    if params[:query].present?
       # @activities = Activity.search_all(params[:query])
       searches.push("Activity.search_all(params[:query])")
-    elsif params[:query] == ""
-      searches.push("Activity.search_all(params[' '])")
+    elsif params[:query] == "" || params[:query].to_s.include?("+")
+      searches.push("Activity.all")
     end
 
     # ALL ACTIVITIES
@@ -50,9 +50,14 @@ class ActivitiesController < ApplicationController
     end
 
     # FREE SEARCH
-    # if params[:free] == "on"
-    #   searches.push("Activity.where(free: true)")
-    # end
+    if params[:free] == "on"
+      searches.push("Activity.where(free: true)")
+    end
+
+    # NO BOOKING REQUIRED SEARCH
+    if params[:no_booking] == "on"
+      searches.push("Activity.where(booking: false)")
+    end
 
     # PERFORM SEARCH
     @activities = eval(searches.join(" & ")) # eval() is a serious security issue

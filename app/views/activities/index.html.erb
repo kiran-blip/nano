@@ -62,22 +62,23 @@
         <div class="checkbox-container">
           <%= label_tag "free", "Free" %>
           <%= check_box_tag :free,
-                            params[:free],
-                            class: "free-checkbox" %>
+                            params[:free] %>
         </div>
         <div class="checkbox-container">
           <%= label_tag "no_booking", "No booking required" %>
           <%= check_box_tag :no_booking,
-                            class: "no-booking-checkbox" %>
+                            params[:no_booking] %>
         </div>
-        <%= text_field_tag :min,
-                            params[:min],
-                            class: "form-control",
-                            placeholder: "Minimum price" %>
-        <%= text_field_tag :max,
-                            params[:max],
-                            class: "form-control",
-                            placeholder: "Maximum price" %>
+        <div class="space-between-container">
+          <%= text_field_tag :min,
+                              params[:min],
+                              class: "form-control",
+                              placeholder: "Minimum price" %>
+          <%= text_field_tag :max,
+                              params[:max],
+                              class: "form-control",
+                              placeholder: "Maximum price" %>
+        </div>
         <%= submit_tag "Search", class: "btn" %>
       <% end %>
     </div>
