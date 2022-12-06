@@ -12,4 +12,10 @@ class Activity < ApplicationRecord
                     tsearch: { prefix: true }
                   }
   pg_search_scope :search_by_tags, against: [:tag], using: { tsearch: { prefix: true } }
+
+  def avg_rating
+    return 0 if reviews.empty?
+    reviews.average(:rating).round
+  end
+
 end
