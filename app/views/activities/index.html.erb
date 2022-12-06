@@ -1,8 +1,7 @@
-<div class="margin-container">
-
-  <div class="top-container">
+<div class="top-container">
+  <div class="index-header">
     <h1>Activities</h1>
-    <%= link_to "New Activity", new_activity_path, class: "button-main" %>
+    <h3><%= link_to "+", new_activity_path, class: "search-form" %></h3>
   </div>
 
   <!-- filter and search section -->
@@ -36,6 +35,8 @@
 
   </div>
 </div>
+
+
 <!-- /filter and search section -->
 
 <!-- /Modal -->
@@ -54,13 +55,14 @@
                             params[:query],
                             class: "form-control",
                             placeholder: "Search" %>
-        <%= text_field_tag :area,
+        <%#= text_field_tag :area,
                             params[:area],
                             class: "form-control",
                             placeholder: "Neighbourhood" %>
         <div class="checkbox-container">
           <%= label_tag "free", "Free" %>
           <%= check_box_tag :free,
+                            params[:free],
                             class: "free-checkbox" %>
         </div>
         <div class="checkbox-container">
@@ -87,20 +89,24 @@
 <!-- index area -->
 <div class="margin-container">
   <div class="index-card-container">
-    <% @activities.each do |activity| %>
-      <%= link_to activity_path(activity) do %>
+    <% if @activities.count >0 %>
+      <% @activities.each do |activity| %>
+        <%= link_to activity_path(activity) do %>
 
-        <% if activity.photos.attached? %>
-          <div class="card-category card-border" style="background: url('<%= cl_image_path activity.photos[0].key %>'); background-size: cover">
-            <p class="centered"><%= activity.name %></p>
-          </div>
-        <% else %>
-          <div class="card-category">
-            <p class="centered"><%= activity.name %></p>
-          </div>
+          <% if activity.photos.attached? %>
+            <div class="card-category card-border" style="background: url('<%= cl_image_path activity.photos[0].key %>'); background-size: cover">
+              <p class="centered"><%= activity.name %></p>
+            </div>
+          <% else %>
+            <div class="card-category">
+              <p class="centered"><%= activity.name %></p>
+            </div>
+          <% end %>
+
         <% end %>
-
       <% end %>
+    <% else %>
+      <p>There's nothing here! ☹️</p>
     <% end %>
   </div>
 </div>
