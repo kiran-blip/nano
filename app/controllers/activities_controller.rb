@@ -10,7 +10,7 @@ class ActivitiesController < ApplicationController
     # For example, filter by the general search query, then *within that*,
     # filter by tag.
 
-
+    # GENERAL SEARCH
     if !params[:query].nil?
       # @activities = Activity.search_all(params[:query])
       searches.push("Activity.search_all(params[:query])")
@@ -18,16 +18,19 @@ class ActivitiesController < ApplicationController
       searches.push("Activity.search_all(params[' '])")
     end
 
+    # ALL ACTIVITIES
     if params[:query].nil? && params[:tags].nil? && params[:min].nil? && params[:max].nil?
       # @activities = Activity.all
       searches.push("Activity.all")
     end
 
+    # TAGS SEARCH
     if !params[:tags].nil?
       # @activities = Activity.search_by_tags(params[:tags])
       searches.push("Activity.search_by_tags(params[:tags])")
     end
 
+    # PRICE SEARCH
     if !params[:min].nil? || !params[:max].nil?
       if params[:min] == ""
         min_price = 0
@@ -46,6 +49,12 @@ class ActivitiesController < ApplicationController
       searches.push(range)
     end
 
+    # FREE SEARCH
+    # if params[:free] == "on"
+    #   searches.push("Activity.where(free: true)")
+    # end
+
+    # PERFORM SEARCH
     @activities = eval(searches.join(" & ")) # eval() is a serious security issue
   end
 
