@@ -14,6 +14,10 @@ class ActivityPolicy < ApplicationPolicy
     true
   end
 
+  def favorite?
+    true
+  end
+
   # def update?
   #   record.user == user
   # end

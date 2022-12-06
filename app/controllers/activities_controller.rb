@@ -92,6 +92,19 @@ class ActivitiesController < ApplicationController
     authorize @activity
   end
 
+  def favorite
+    activity = Activity.find(params[:id])
+    current_user.favorite(activity)
+    redirect_to activity_path(activity)
+    authorize activity
+  end
+
+  def unfavorite
+    user = User.find(params[:user_id])
+    activity = Activity.find(params[:activity_id])
+    user.unfavorite(activity)
+  end
+
   private
 
   def activity_params

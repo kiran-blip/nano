@@ -1,3 +1,13 @@
+<h1>My Likes</h1>
+
+
+<% @user.favorites.each do |favorite| %>
+  <%= link_to favorite.favoritable.name, favorite.favoritable %>
+<% end %>
+
+
+
+
 <div class="margin-container">
   <div class="profile-container">
     <h2>Edit <%= resource_name.to_s.humanize %></h2>
