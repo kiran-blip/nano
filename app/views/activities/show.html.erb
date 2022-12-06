@@ -86,64 +86,63 @@
   </div>
 </div>
 
-<div class="margin-container">
-  <div class="map-container"
-    data-controller="map"
-    data-map-markers-value="<%= @markers.to_json %>"
-    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-  </div>
-
-
-  <div class="reviews-container">
-    <h2>Reviews</h2>
-    <%= @activity.avg_rating.times do %>
-      <% end %><br>
-    <% @activity.reviews.each do |review| %>
-    <li class = "list-group-item">
-        <div class="review-container">
-          <div class="space-between-container">
-            <h3 class="review-title"><%= review.title %></h3>
-              <small>
-                <% count = 0 %>
-                  <% 5.times do %>
-                    <% if review.rating > count %>
-                      <i class="fas fa-star"></i>
-                    <% else %>
-                      <i class="far fa-star"></i>
-                    <% end %>
-                  <% count += 1 %>
-                  <% end %>
-              </small>
-          </div>
-            <p class="review-description"><%= review.comment %></p>
-        </div>
-    </li>
-    <% end %>
-  </div>
-
-    <%# <div class="review-container">
-      <div class="space-between-container">
-        <h3 class="review-title">Title</h3>
-        <div class="review-rating">★★★★★</div>
-      </div>
-      <p class="review-description">This is a description.</p>
+  <div class="map-reviews-container">
+    <div class="map-container"
+      data-controller="map"
+      data-map-markers-value="<%= @markers.to_json %>"
+      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
 
-    <div class="review-container">
-      <div class="space-between-container">
-        <h3 class="review-title">Title</h3>
-        <div class="review-rating">★★★★★</div>
-      </div>
-      <p class="review-description">This is a description.</p>
-    </div> %>
-  <%# </div> %>
 
-<%= simple_form_for [@activity, @review] do |f| %>
+    <div class="reviews-container">
+      <h2>Reviews</h2>
+      <%= @activity.avg_rating.times do end%>
+      <% @activity.reviews.each do |review| %>
+        <li class = "list-group-item">
+            <div class="review-container">
+              <div class="space-between-container">
+                <h3 class="review-title"><%= review.title %></h3>
+                  <small>
+                    <% count = 0 %>
+                      <% 5.times do %>
+                        <% if review.rating > count %>
+                          <i class="fas fa-star"></i>
+                        <% else %>
+                          <i class="far fa-star"></i>
+                        <% end %>
+                      <% count += 1 %>
+                      <% end %>
+                  </small>
+              </div>
+                <p class="review-description"><%= review.comment %></p>
+            </div>
+        </li>
+      <% end %>
+
+
+      <%# <div class="review-container">
+        <div class="space-between-container">
+          <h3 class="review-title">Title</h3>
+          <div class="review-rating">★★★★★</div>
+        </div>
+        <p class="review-description">This is a description.</p>
+      </div>
+
+      <div class="review-container">
+        <div class="space-between-container">
+          <h3 class="review-title">Title</h3>
+          <div class="review-rating">★★★★★</div>
+        </div>
+        <p class="review-description">This is a description.</p>
+      </div> %>
+      <%# </div> %>
+
+      <%= simple_form_for [@activity, @review] do |f| %>
         <%= f.input :rating, collection: 0..5 %>
         <%= f.input :title%>
         <%= f.input :comment%>
-        <%= f.submit class: 'btn btn-primary' %>
+        <%= f.submit class: 'button-main' %>
       <% end %>
-      <%= link_to "See all activities", activities_path %>
-
-</div>
+      <%#= link_to "See all activities", activities_path %>
+    </div>
+  </div>
