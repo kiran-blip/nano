@@ -97,6 +97,8 @@
 
   <div class="reviews-container">
     <h2>Reviews</h2>
+    <%= @activity.avg_rating.times do %>
+      <% end %><br>
     <% @activity.reviews.each do |review| %>
     <li class = "list-group-item">
         <div class="review-container">
