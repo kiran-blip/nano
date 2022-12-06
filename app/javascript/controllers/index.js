@@ -19,5 +19,5 @@ application.register("modal", ModalController)
 import ClipboardController from "./clipboard_controller"
 application.register("clipboard", ClipboardController)
 
-import buttonCircle from "./button-circle"
-application.register("button-circle", buttonCircle)
+// import buttonCircle from "./button-circle"
+// application.register("button-circle", buttonCircle)
