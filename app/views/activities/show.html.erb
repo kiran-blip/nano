@@ -6,9 +6,10 @@
 <div class="half-container">
 <div class="carousel-show" data-flickity='{ "pageDots":false, "wrapAround": true}'>
 
-  <% @activity.photos.each do |photo| %>
+ <% @activity.photos.each do |photo| %>
     <%= cl_image_tag photo.key %>
   <% end %>
+
 
 </div>
 
