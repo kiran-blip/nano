@@ -61,7 +61,7 @@
 
     <p class="description"><%= @activity.description %></p>
 
-
+    <hr>
     <div class="tags-container">
       <% @activity.tag.each do |tag| %>
         <a href="<%= activities_path(tags: tag) %>" class="show-tag"><%= tag %></a>
@@ -78,7 +78,7 @@
       <% end %>
     </div>
 
-       <hr>
+
         <%= link_to "Delete",
       activity_path(@activity),
       class: "button-secondary",
@@ -88,7 +88,6 @@
   </div>
 </div>
 
-  <div class="map-reviews-container">
     <div class="map-container"
       data-controller="map"
       data-map-markers-value="<%= @markers.to_json %>"
@@ -97,6 +96,8 @@
 
 
     <div class="reviews-container">
+      <%#= link_to "See all activities", activities_path %>
+      <div class = "reviews">
       <h2>Reviews</h2>
            <%@activity.avg_rating.times do%>
       <i class="fas fa-star"></i>
@@ -122,6 +123,7 @@
             </div>
         </li>
       <% end %>
+      </div>
 
 
       <%# <div class="review-container">
@@ -141,12 +143,19 @@
       </div> %>
       <%# </div> %>
 
-      <%= simple_form_for [@activity, @review] do |f| %>
-        <%= f.input :rating, collection: 0..5 %>
-        <%= f.input :title%>
-        <%= f.input :comment%>
-        <%= f.submit class: 'button-main' %>
-      <% end %>
-      <%#= link_to "See all activities", activities_path %>
-    </div>
+      </div>
+      <div class="review-dude">
+        <div class="new-reviews" >
+        <%= simple_form_for [@activity, @review] do |f| %>
+          <%= f.input :rating, collection: 0..5 %>
+          <%= f.input :title%>
+          <%= f.input :comment%>
+          <%= f.submit class: 'button-main' %>
+        <% end %>
+        </div>
+          <div class="image-container">
+            <%= image_tag("main-image") %>
+          </div>
+      </div>
+
   </div>
