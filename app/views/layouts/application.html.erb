@@ -6,6 +6,7 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <%= favicon_link_tag asset_path('favicon.png') %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
     <link href="https://api.mapbox.com/mapbox-gl-js/v2.11.0/mapbox-gl.css" rel="stylesheet">
@@ -18,7 +19,7 @@
 
     <%= yield %>
     <div class="footer">
-      <p>Made with 💖 by Kiran, Michelle, Jack and George
+      <p>Made with 💖 by <a href="https://github.com/kiran-blip">Kiran</a>, <a href="https://github.com/JackB-101">Jack</a>, <a href="https://github.com/MichelleModest">Michelle</a> and <a href="https://github.com/gloyens">George</a>
     </div>
   </body>
 
