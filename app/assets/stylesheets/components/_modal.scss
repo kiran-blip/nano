@@ -142,6 +142,28 @@ button {
   z-index: 3;
 }
 
+.modal-share {
+  max-height: 221px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .form-control {
+    border-radius: 5px !important;
+    width: 63%;
+    border: 0;
+  }
+
+  .btn-outline-primary {
+    margin-top: 0;
+    border: 0;
+    margin-bottom: 12px;
+  }
+}
+
 .hidden {
   display: none;
 }
