@@ -29,7 +29,7 @@
     </div>
 
     <div class="overlay hidden"></div>
-    <section class="modal hidden">
+    <section class="modal modal-share hidden">
       <div class="x-container">
         <h3>Share this activity</h3>
         <button class="btn-close"></button>
@@ -42,15 +42,13 @@
         </div>
       </div>
 
-      <div>
-        <%=
-          social_share_button_tag(request.original_url,
-                      {
+      <%# <div>
+        <%=social_share_button_tag(request.original_url,{
                 :title => "Check out this page!",
                 :text => "This page is really cool, you should check it out!",
                 :image => "http://www.example.com/image.png"
               })%>
-        </div>
+      <%# </div> %>
 
     </section>
 
