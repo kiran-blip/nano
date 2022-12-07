@@ -1,6 +1,10 @@
 <div class="top-container">
   <div class="index-header">
-    <h1>Activities</h1>
+    <% if params[:query].nil? || params[:query].gsub(/[\s\+]+/, "") == "" %>
+      <h1>Activities</h1>
+    <% else %>
+      <h1><%= params[:query].capitalize %></h1>
+    <% end %>
     <h3><%= link_to "+", new_activity_path, class: "search-form" %></h3>
   </div>
 
@@ -44,11 +48,10 @@
 
 <section class="modal hidden">
   <div class="x-container">
+    <h2>Filter</h2>
     <button class="btn-close fa-solid fa-xmark"></button>
   </div>
   <div>
-
-
     <div>
       <%= form_with url: activities_path, method: :get, class: "d-flex modal-form" do %>
         <%= text_field_tag :query,
@@ -79,7 +82,7 @@
                               class: "form-control",
                               placeholder: "Maximum price" %>
         </div>
-        <%= submit_tag "Search", class: "btn" %>
+        <%= submit_tag "Search", class: "button-main" %>
       <% end %>
     </div>
     <!-- Form -->

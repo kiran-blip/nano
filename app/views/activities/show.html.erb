@@ -25,19 +25,16 @@
         <%= link_to "❤️", favorite_activity_path(@activity), class: "button-circle" %>
       <% end %>
 
-      <a href="#" class="social-sharing-button button-circle btn-open">🔗</a>
+      <a style="cursor: pointer" class="social-sharing-button button-circle btn-open">🔗</a>
     </div>
 
     <div class="overlay hidden"></div>
     <section class="modal hidden">
-      <div class="flex">
-        <img src="https://avatars.githubusercontent.com/u/62628408?s=96&v=4" width="50px" height="50px" alt="user" />
-        <button class="btn-close">❌</button>
-      </div>
-      <div>
+      <div class="x-container">
         <h3>Share this activity</h3>
-        <p>Copy and paste the link below to share this activity with your friends</p>
+        <button class="btn-close"></button>
       </div>
+
       <div class="input-group" data-controller="clipboard" data-clipboard-feedback-text-value="Copied!">
           <input class="form-control" data-clipboard-target="input" type="text" value="<%= request.original_url %>" readonly>
         <div class="input-group-append">

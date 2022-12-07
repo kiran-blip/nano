@@ -4,9 +4,8 @@
   justify-content: flex-start;
   gap: 0.4rem;
   width: 450px;
-  height: 500px;
+  max-height: 400px;
   padding: 20px;
-  // min-height: 250px;
   position: absolute;
   top: 20%;
   left: 35%;
@@ -23,12 +22,18 @@
     margin: 17px 0px;
     margin-top: 0px;
     color: white;
-    background-color: #3e2f5b;
+    background-color: $indigo;
     background-clip: padding-box;
-    border: 2px solid #5b3a7f;
+    border: 2px solid $indigo-light;
 
      &::placeholder {
       color: rgba(255,255,255,0.7);
+    }
+
+    &:focus {
+      border: none;
+      box-shadow: none;
+      background-color: $indigo-dark;
     }
   }
 
@@ -40,12 +45,19 @@
 }
 
 .checkbox-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px 20px;
   accent-color: $blue;
   color: white;
 
-  // input[type=checkbox] {
+  label {
+    width: 100%;
+  }
 
-  // }
+  input {
+    transform: scale(1.5);
+  }
 
   .main input:active{
     background-color: $indigo-dark;
@@ -98,16 +110,23 @@ button {
 
 .x-container {
   display: flex;
-  justify-content: flex-end;
-  margin-top: 18px;
-  margin-right: 7px;
+  justify-content: space-between;
+  color: white;
+  margin-top: 10px;
+  margin-left: 10px;
 }
 
 .btn-close {
-  transform: translate(10px, -20px);
-  padding: 0.5rem 0.5rem;
-  background: #5b3a7f;
+  // transform: translate(10px, -20px);
+  padding: 10px;
+  background-color: $indigo-dark !important;
   border-radius: 50%;
+  color: white;
+
+  &:hover {
+    background-color: $indigo-dark;
+    color: white;
+  }
 }
 
 .overlay {
