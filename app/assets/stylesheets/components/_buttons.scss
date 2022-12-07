@@ -64,13 +64,12 @@
 }
 
 .button-secondary {
-  height: 50px;
-  min-width: 50px;
-  border-radius: 25px;
-  padding: 10px 15px;
-  margin: 8px;
 
-  background-color: $indigo;
-  border: 2px solid $blue;
-  color: $blue;
+  margin: 8px;
+  background-color: transparent;
+  color: $indigo-lighter;
+
+  &:hover {
+    color: $blue;
+  }
 }
