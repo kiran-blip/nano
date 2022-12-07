@@ -222,7 +222,7 @@ myo.save
 
 
 soccer = Activity.create!(
-  name: "Football in the park",
+  name: "Footy Addicts",
   description: "",
   tag: ["sport", "nature"],
   price: 0,
@@ -318,7 +318,7 @@ pottery.save
 
 
 jamesa = Activity.create!(
-  name: "James Acaster Live @ the Chapel Comedy Show",
+  name: "James Acaster Live",
   description: "",
   tag: ["comedy", "fun"],
   price: 10,
@@ -337,7 +337,7 @@ jamesa.photos.attach(io: file1, filename: "jamesa.jpg", content_type: "image/jpg
 jamesa.save
 
 upright = Activity.create!(
-  name: "Upright Citizens Brigade Beginner Comedy Class",
+  name: "Beginner Comedy Class",
   description: "",
   tag: ["comedy", "fun"],
   price: 35,
@@ -395,7 +395,7 @@ marcus.save
 
 
 meditation = Activity.create!(
-  name: "SoundBath and Transcendental Meditation",
+  name: "Transcendental Meditation",
   description: "",
   tag: ["sport", "wellness"],
   price: 20,
@@ -474,7 +474,7 @@ jazz.photos.attach(io: file1, filename: "jazz.jpg", content_type: "image/jpg")
 jazz.save
 
 jam = Activity.create!(
-  name: "Art Jam - painting on textiles",
+  name: "Art Jam",
   description: "",
   tag: ["art"],
   price: 15,
