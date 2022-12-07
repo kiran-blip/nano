@@ -65,7 +65,7 @@
 
 .social-container {
   display: flex;
-  justify-content: flex-end;
+  justify-content: left;
 }
 
 .index-header {
@@ -89,6 +89,7 @@
 
 .explore-container {
   text-decoration: none;
+  padding-top: 30px;
   margin: 0 15%;
 
   .categories-container {
@@ -117,7 +118,8 @@
   }
 
   h3 {
-    padding: 30px 100px;
+    padding: 30px 60px;
+    text-align: center;
   }
 }
 
@@ -131,12 +133,14 @@
 
 .half-container {
   display: flex;
+  height: 95vh;
 }
 
 .activity-info-container {
   width: 50%;
   padding: 50px;
   padding-right: 10%;
+  padding-left: 5%;
   padding-top: 100px;
   background-color: $indigo-dark;
   box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.5);
@@ -154,6 +158,9 @@
   .description {
     font-size: 14px;
     padding: 30px 0;
+  }
+  hr {
+    padding-bottom: 15px;
   }
 }
 
@@ -229,4 +236,9 @@ a {
 
 .new-activity {
   color: white;
+}
+
+.avg-rating {
+  padding-top: 5%;
+  padding-bottom: 5%;
 }
