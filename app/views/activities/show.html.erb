@@ -17,6 +17,11 @@
       <h1><%= @activity.name %></h1>
       <h2>£<%= @activity.price %></h2>
     </div>
+    <div class=avg-rating>
+          <%@activity.avg_rating.times do%>
+          <i class="fas fa-star"></i>
+           <%end%>
+    </div>
 
     <div class="social-container">
       <% if current_user.favorited?(@activity) %>
@@ -93,7 +98,9 @@
 
     <div class="reviews-container">
       <h2>Reviews</h2>
-      <%= @activity.avg_rating.times do end%>
+           <%@activity.avg_rating.times do%>
+      <i class="fas fa-star"></i>
+      <%end%>
       <% @activity.reviews.each do |review| %>
         <li class = "list-group-item">
             <div class="review-container">
