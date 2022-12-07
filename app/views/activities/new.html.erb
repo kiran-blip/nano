@@ -7,7 +7,7 @@
     <%= f.input :name %>
     <%= f.input :description %>
     <%= f.input :tag,
-      collection: %w(sport music history art team puzzle tour),
+      collection: %w(sport nature animals music art science),
       input_html: { multiple: true, data: {controller: "tom-select"} },
       include_hidden: false
     %>
