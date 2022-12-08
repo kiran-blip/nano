@@ -27,14 +27,18 @@
   <div class="margin-container"><h3>Tonight</h3></div>
   <div class="carousel-home" data-flickity='{ "wrapAround": true, "autoPlay": true, "pageDots": false}'>
 
-
-  <% Activity.all.each do |activity| %>
-
+    <% Activity.all.each do |activity| %>
       <%= link_to activity_path(activity) do %>
-        <div class="card-category card-border carousel-cell-home">
+      <div class="top-caro">
+        <div class="card-category card-border carousel-cell-home ">
           <p class="carousel-centered"><%= activity.name %></p>
-            <img class="w3-image" src=<%= activity.image %>>
+
+          <% if activity.photos.attached? %>
+            <img class="w3-image" src="<%= cl_image_path activity.photos[0].key %>">
+          <% end %>
+
         </div>
+      </div>
       <% end %>
     <% end %>
 
