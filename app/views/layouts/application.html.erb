@@ -14,12 +14,14 @@
   </head>
 
   <body data-controller="modal">
-    <%= render "shared/navbar" %>
-    <%= render "shared/flashes" %>
+    <div class="home-wrapper">
+      <%= render "shared/navbar" %>
+      <%= render "shared/flashes" %>
 
-    <%= yield %>
-    <div class="footer">
-      <p>Made with 💖 by <a href="https://github.com/kiran-blip">Kiran</a>, <a href="https://github.com/JackB-101">Jack</a>, <a href="https://github.com/MichelleModest">Michelle</a> and <a href="https://github.com/gloyens">George</a>
+      <%= yield %>
+      <div class="footer">
+        <p>Made with 💖 by <a href="https://github.com/kiran-blip">Kiran</a>, <a href="https://github.com/JackB-101">Jack</a>, <a href="https://github.com/MichelleModest">Michelle</a> and <a href="https://github.com/gloyens">George</a>
+      </div>
     </div>
   </body>
 
