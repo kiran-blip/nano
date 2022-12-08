@@ -7,7 +7,7 @@
   </div>
 
   <div class="lettering-container">
-    <h1>nano</h1>
+    <h1>Nano</h1>
     <h2>non-alcoholic<br>nights out</h2>
     <%= form_with url: activities_path, method: :get, class: "d-flex search-form", html: {autocomplete: "off"} do %>
       <%= text_field_tag :query,
@@ -24,17 +24,21 @@
 </div>
 
 <div class="tonight-container">
-  <div class="margin-container"><h3>tonight</h3></div>
+  <div class="margin-container"><h3>Tonight</h3></div>
   <div class="carousel-home" data-flickity='{ "wrapAround": true, "autoPlay": true, "pageDots": false}'>
 
-
-  <% Activity.all.each do |activity| %>
-
+    <% Activity.all.each do |activity| %>
       <%= link_to activity_path(activity) do %>
-        <div class="card-category card-border carousel-cell-home">
+      <div class="top-caro">
+        <div class="card-category card-border carousel-cell-home ">
           <p class="carousel-centered"><%= activity.name %></p>
-            <img class="w3-image" src=<%= activity.image %>>
+
+          <% if activity.photos.attached? %>
+            <img class="w3-image" src="<%= cl_image_path activity.photos[0].key %>">
+          <% end %>
+
         </div>
+      </div>
       <% end %>
     <% end %>
 
@@ -47,44 +51,46 @@
 
 
 <div class="explore-container">
-  <div class="margin-container"><h3>popular</h3></div>
+  <div class="margin-container"><h3>Popular</h3></div>
 
   <div class="category-card-container">
-  <%= link_to activities_path(query: "sport") do %>
-    <div class="card-category" style="background-image: url(<%= asset_path 'sport.png' %>);">
-      <p>sport</p>
-    </div>
-  <% end %>
-
-  <%= link_to activities_path(query: "nature") do %>
-    <div class="card-category" style="background-image: url(<%= asset_path 'nature.png' %>);">
-      <p>nature</p>
-    </div>
-  <% end %>
-
-  <%= link_to activities_path(query: "animals") do %>
-    <div class="card-category" style="background-image: url(<%= asset_path 'animals.png' %>);">
-      <p>animals</p>
-    </div>
-  <% end %>
-
-  <%= link_to activities_path(query: "music") do %>
-    <div class="card-category" style="background-image: url(<%= asset_path 'music.png' %>);">
-      <p>music</p>
-    </div>
-  <% end %>
 
   <%= link_to activities_path(query: "art") do %>
     <div class="card-category" style="background-image: url(<%= asset_path 'art.png' %>);">
-      <p>art</p>
+      <p>Art</p>
     </div>
   <% end %>
 
   <%= link_to activities_path(query: "fun") do %>
     <div class="card-category" style="background-image: url(<%= asset_path 'misc.png' %>);">
-      <p>science</p>
+      <p>Fun</p>
     </div>
   <% end %>
+
+    <%= link_to activities_path(query: "nature") do %>
+    <div class="card-category" style="background-image: url(<%= asset_path 'nature.png' %>);">
+      <p>Nature</p>
+    </div>
+  <% end %>
+
+    <%= link_to activities_path(query: "sport") do %>
+    <div class="card-category" style="background-image: url(<%= asset_path 'sport.png' %>);">
+      <p>Sport</p>
+    </div>
+  <% end %>
+
+  <%= link_to activities_path(query: "animals") do %>
+    <div class="card-category" style="background-image: url(<%= asset_path 'animals.png' %>);">
+      <p>Animals</p>
+    </div>
+  <% end %>
+
+  <%= link_to activities_path(query: "music") do %>
+    <div class="card-category" style="background-image: url(<%= asset_path 'music.png' %>);">
+      <p>Music</p>
+    </div>
+  <% end %>
+
 
   <!-- Previous version of card
   <%= link_to activities_path(query: "team") do %>
@@ -96,7 +102,7 @@
 </div>
 
 
-<div class="margin-container"><h3>neighbourhoods</h3></div>
+<div class="margin-container"><h3>Neighbourhoods</h3></div>
 
   <div class="category-card-container">
     <%= link_to activities_path(query: "camden+town") do %>
@@ -138,8 +144,6 @@
 
 </div>
 
-
-<div class="margin-container">
   <div class="nearme-container">
     <div
       class="map-container"
@@ -151,4 +155,3 @@
       </div>
     </div>
   </div>
-</div>

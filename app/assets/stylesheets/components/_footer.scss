@@ -3,4 +3,12 @@
   color: white;
   padding: 100px;
   text-align: center;
+
+  a {
+    color: white;
+  }
+
+  a:hover, a:active {
+    color: $blue;
+  }
 }

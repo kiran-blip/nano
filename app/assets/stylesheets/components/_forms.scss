@@ -1,13 +1,19 @@
 .search-form {
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+  align-items: center;
   height: 50px;
   min-width: 50px;
   border-radius: 25px;
-  padding: 0 15px;
+  padding: 0 20px;
   margin: 8px;
 
   background-color: $blue;
   box-shadow: 0 10px 30px 0 rgba(0, 0, 40, 0.3);
   color: white;
+
+  h5 {margin: 0}
 
   .form-control {
     background-color: transparent;
