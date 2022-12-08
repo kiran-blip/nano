@@ -1,6 +1,6 @@
 <div class="half-container">
   <div class="likes-container">
-    <h2>My Likes</h2>
+    <h2>Favourites</h2>
 
     <div class="index-card-container">
       <% @user.favorites.each do |favorite| %>
@@ -18,6 +18,26 @@
 
         <% end %>
       <% end %>
+    </div>
+
+    <h2>My Activities</h2>
+
+    <!--<div class="index-card-container">
+      <% @user.activities.each do |activity| %>
+        <%= link_to activity.favoritable do %>
+
+          <% if activity.photos.attached? %>
+            <div class="card-category card-border" style="background: url('<%= cl_image_path activity.photos[0].key %>'); background-size: cover">
+              <p class="centered"><%= activity.name %></p>
+            </div>
+          <% else %>
+            <div class="card-category">
+              <p class="centered"><%= activity.name %></p>
+            </div>
+          <% end %>
+
+        <% end %>
+      <% end %> -->
     </div>
 
   </div>
