@@ -181,7 +181,7 @@ scottish.save
 
 myo = Activity.create!(
   name: "MYOs crafts",
-  description: "MYO is the perfect space in London to get creative on your own or with friends, family and co-workers - by providing the know-how, equipment, environment and materials for you to do so. Guests can come and enjoy decoupage, painting, sketching, ceramic painting, jewellery making, embroidery, t-shirt / canvas bag design, paper crafts every night of the week.",
+  description: "MYO is the perfect space in London to get creative on your own or with friends, family and co-workers - by providing the know-how, equipment, environment and materials for you to do so. Guests can come and enjoy decoupage, painting, sketching, ceramic painting, jewellery making, embroidery, t-shirt / canvas bag design, paper crafts every night of the week. On Tuesday nights visiting artists and professors give lectures on a variety of subjects, from color theory to moldmaking. Saturday nights involve the more standard Paint & Sip craze, and Thursday MYOs is the best place in town for pottery wheel lessons. Please check our website for the class and lecture schedule. The venue is also available for private parties upon request. ",
   tag: ["art", "crafts"],
   price: 10,
   image: "https://cdn.britannica.com/88/132288-050-74505F78/Pottery-people-clay-Hohokam-designs.jpg",
@@ -482,7 +482,7 @@ jam = Activity.create!(
   start: DateTime.new(2022,12,1),
   end: DateTime.new(2022,12,4),
   location: "King's Cross",
-  free: true,
+  free: false,
   venue: nil,
   booking: true,
   user_id: User.all[0].id.to_i
@@ -491,3 +491,195 @@ jam = Activity.create!(
 file1 = URI.open("http://cdn.shopify.com/s/files/1/0260/9971/2105/files/DIY_Tote_Bag_Painting_Kit_480x480.jpg?v=1592383336")
 jam.photos.attach(io: file1, filename: "jam.jpg", content_type: "image/jpg")
 jam.save
+
+
+printing = Activity.create!(
+  name: "Printmaking",
+  description: "",
+  tag: ["art"],
+  price: 15,
+  image: "https://www.jacksonsart.com/blog/wp-content/uploads/2022/09/Slama_Press_Printmaking_Techniques_Blog_Image-4.jpg",
+  start: DateTime.new(2022,12,1),
+  end: DateTime.new(2022,12,4),
+  location: "King's Cross",
+  free: false,
+  venue: nil,
+  booking: true,
+  user_id: User.all[0].id.to_i
+)
+
+file1 = URI.open("https://www.jacksonsart.com/blog/wp-content/uploads/2022/09/Slama_Press_Printmaking_Techniques_Blog_Image-4.jpg")
+printing.photos.attach(io: file1, filename: "printing.jpg", content_type: "image/jpg")
+printing.save
+
+ceramics = Activity.create!(
+  name: "Friday Nights Ceramics Course",
+  description: "",
+  tag: ["art"],
+  price: 10,
+  image: "https://candaceabroad.com/wp-content/uploads/2021/09/Pottery-classes-london-1440x2160.jpg",
+  start: DateTime.new(2022,12,1),
+  end: DateTime.new(2022,12,4),
+  location: "Brixton",
+  free: false,
+  venue: nil,
+  booking: true,
+  user_id: User.all[0].id.to_i
+)
+
+file1 = URI.open("https://candaceabroad.com/wp-content/uploads/2021/09/Pottery-classes-london-1440x2160.jpg")
+ceramics.photos.attach(io: file1, filename: "ceramics.jpg", content_type: "image/jpg")
+ceramics.save
+
+master = Activity.create!(
+  name: "Master Peace",
+  description: "",
+  tag: ["art"],
+  price: 10,
+  image: "https://www.belgravialdn.com/app/uploads/sites/2/2021/01/MP-Space-1-scaled.jpg",
+  start: DateTime.new(2022,12,1),
+  end: DateTime.new(2022,12,4),
+  location: "Brixton",
+  free: false,
+  venue: nil,
+  booking: true,
+  user_id: User.all[0].id.to_i
+)
+
+file1 = URI.open("https://www.belgravialdn.com/app/uploads/sites/2/2021/01/MP-Space-1-scaled.jpg")
+master.photos.attach(io: file1, filename: "master.jpg", content_type: "image/jpg")
+master.save
+
+candle = Activity.create!(
+  name: "Candle Making",
+  description: "",
+  tag: ["art"],
+  price: 10,
+  image: "https://cantocandle.com/wp-content/uploads/2018/04/SQWORKSHOP0041.jpg",
+  start: DateTime.new(2022,12,1),
+  end: DateTime.new(2022,12,4),
+  location: "Brixton",
+  free: false,
+  venue: nil,
+  booking: true,
+  user_id: User.all[0].id.to_i
+)
+
+file1 = URI.open("https://cantocandle.com/wp-content/uploads/2018/04/SQWORKSHOP0041.jpg")
+candle.photos.attach(io: file1, filename: "candle.jpg", content_type: "image/jpg")
+candle.save
+
+jewellery = Activity.create!(
+  name: "jewellery Making",
+  description: "",
+  tag: ["art"],
+  price: 10,
+  image: "https://www.papermetal.co.uk/wp-content/uploads/2019/08/papermetal-JulieBailey-jewellerymaking-workshop-overhead.jpg",
+  start: DateTime.new(2022,12,1),
+  end: DateTime.new(2022,12,4),
+  location: "Notting Hill",
+  free: false,
+  venue: nil,
+  booking: true,
+  user_id: User.all[0].id.to_i
+)
+
+file1 = URI.open("https://www.papermetal.co.uk/wp-content/uploads/2019/08/papermetal-JulieBailey-jewellerymaking-workshop-overhead.jpg")
+jewellery.photos.attach(io: file1, filename: "jewellery.jpg", content_type: "image/jpg")
+jewellery.save
+
+cast = Activity.create!(
+  name: "Moldmaking and Casting",
+  description: "",
+  tag: ["art"],
+  price: 10,
+  image: "https://s3-ap-southeast-2.amazonaws.com/anmm-data/blog/2017/03/29/dsc01420.jpg",
+  start: DateTime.new(2022,12,1),
+  end: DateTime.new(2022,12,4),
+  location: "Notting Hill",
+  free: false,
+  venue: nil,
+  booking: true,
+  user_id: User.all[0].id.to_i
+)
+
+file1 = URI.open("https://s3-ap-southeast-2.amazonaws.com/anmm-data/blog/2017/03/29/dsc01420.jpg")
+cast.photos.attach(io: file1, filename: "cast.jpg", content_type: "image/jpg")
+cast.save
+
+horse = Activity.create!(
+  name: "Horseback Riding in Hyde Park",
+  description: "",
+  tag: ["sport"],
+  price: 60,
+  image: "https://www.equilifeworld.com/wp-content/uploads/2019/06/gvZjVRSQ-740x499.png",
+  start: DateTime.new(2022,12,1),
+  end: DateTime.new(2022,12,4),
+  location: "Notting Hill",
+  free: false,
+  venue: nil,
+  booking: true,
+  user_id: User.all[2].id.to_i
+)
+
+file1 = URI.open("https://www.equilifeworld.com/wp-content/uploads/2019/06/gvZjVRSQ-740x499.png")
+horse.photos.attach(io: file1, filename: "horse.jpg", content_type: "image/jpg")
+horse.save
+
+squash = Activity.create!(
+  name: "Squash",
+  description: "",
+  tag: ["sport"],
+  price: 10,
+  image: "https://www.asrc.co.uk/media/1350/court.jpg",
+  start: DateTime.new(2022,12,1),
+  end: DateTime.new(2022,12,4),
+  location: "Brixton",
+  free: false,
+  venue: nil,
+  booking: true,
+  user_id: User.all[2].id.to_i
+)
+
+file1 = URI.open("https://www.asrc.co.uk/media/1350/court.jpg")
+squash.photos.attach(io: file1, filename: "squash.jpg", content_type: "image/jpg")
+squash.save
+
+
+park = Activity.create!(
+  name: "Parkour Generations",
+  description: "",
+  tag: ["sport"],
+  price: 10,
+  image: "https://parkourgenerationslondon.com/wp-content/uploads/2019/08/RDV-2019-gym.jpg",
+  start: DateTime.new(2022,12,1),
+  end: DateTime.new(2022,12,4),
+  location: "Brixton",
+  free: false,
+  venue: nil,
+  booking: true,
+  user_id: User.all[2].id.to_i
+)
+
+file1 = URI.open("https://parkourgenerationslondon.com/wp-content/uploads/2019/08/RDV-2019-gym.jpg")
+park.photos.attach(io: file1, filename: "park.jpg", content_type: "image/jpg")
+park.save
+
+dash = Activity.create!(
+  name: "CityDash",
+  description: "",
+  tag: ["sport"],
+  price: 5,
+  image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/07/f8/46/68/fire-hazard-citydash.jpg?w=1200&h=-1&s=1",
+  start: DateTime.new(2022,12,1),
+  end: DateTime.new(2022,12,4),
+  location: "Brixton",
+  free: false,
+  venue: nil,
+  booking: true,
+  user_id: User.all[2].id.to_i
+)
+
+file1 = URI.open("https://dynamic-media-cdn.tripadvisor.com/media/photo-o/07/f8/46/68/fire-hazard-citydash.jpg?w=1200&h=-1&s=1")
+dash.photos.attach(io: file1, filename: "dash.jpg", content_type: "image/jpg")
+dash.save
