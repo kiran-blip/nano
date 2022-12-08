@@ -1,6 +1,6 @@
 <div class="half-container">
   <div class="likes-container">
-    <h2>My Likes</h2>
+    <h2>Liked Activities</h2>
 
     <div class="index-card-container">
       <% @user.favorites.each do |favorite| %>
@@ -22,8 +22,16 @@
 
   </div>
 
+  <a style="cursor: pointer" class="social-sharing-button button-edit btn-open">Edit Account</a>
+
+  <div class="overlay hidden"></div>
+  <section class="modal modal-edit hidden">
   <div class="profile-container">
-    <h2>Edit <%= resource_name.to_s.humanize %></h2>
+      <div class="x-container">
+        <h2>Edit <%= resource_name.to_s.humanize %></h2>
+        <button class="btn-close"></button>
+      </div>
+
 
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
       <%= f.error_notification %>
@@ -35,11 +43,11 @@
           <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
         <% end %>
 
-        <%= f.input :password,
+        <%= f.input :new_password,
                     hint: "leave it blank if you don't want to change it",
                     required: false,
                     input_html: { autocomplete: "new-password" } %>
-        <%= f.input :password_confirmation,
+        <%= f.input :new_password_confirmation,
                     required: false,
                     input_html: { autocomplete: "new-password" } %>
         <%= f.input :current_password,
@@ -53,8 +61,9 @@
       </div>
     <% end %>
 
-      <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "button-secondary" %>
+      <%= button_to "   Cancel account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "button-secondary fa-solid fa-trash" %>
 
     <%= link_to "Back", :back %>
   </div>
+  </section>
 </div>
