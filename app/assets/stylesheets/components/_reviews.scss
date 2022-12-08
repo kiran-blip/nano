@@ -1,8 +1,7 @@
 .reviews-container {
   display:flex;
   width: 80%;
-  margin: 10%;
-  margin-bottom: 0;
+  margin: 0 10%;
   color: white;
   padding: 0 10%;
 }
@@ -19,8 +18,8 @@
 
 .review-dude {
   display:flex;
-justify-content: center;
-  padding:0 10%;
+  justify-content: center;
+  padding:0 10% 100px;
   .new-reviews {
     padding-top: 10%;
     width:37%;
