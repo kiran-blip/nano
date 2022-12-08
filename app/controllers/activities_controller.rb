@@ -70,7 +70,8 @@ class ActivitiesController < ApplicationController
     @markers = @activities.geocoded.map do |a|
       {
         lat: @activity.latitude,
-        lng: @activity.longitude
+        lng: @activity.longitude,
+        image_url: helpers.asset_url("mapbox-marker-icon-20px-purple.png"),
       }
     end
 
