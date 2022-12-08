@@ -139,9 +139,7 @@ hartleys.save
 scottish = Activity.create!(
   name: "Scottish Dance Night",
   description: "Come enjoy Thursday night Scottish dance at Cameron’s. We are passionate about education. By publishing dance books and recording music specifically designed for learning Scottish Country Dance we are developing a strong legacy for the future.
-  Cameron’s maintains and develops first rate standards of teaching Scottish Country Dance and music by training teachers, providing bespoke teaching materials and offering continuing development training for educators in the wider community. There are also opportunities available for musicians and dancers to take part in music courses, medal tests for young people and dancing achievement awards. Many of our members and teachers go on to work in schools and in the wider community.
-  We try to open doors for young people, whether that is through offers of scholarships to our annual events, assistance with voluntary work or the provision of youth-based competitions and initiatives.
-  ",
+  Cameron’s maintains and develops first rate standards of teaching Scottish Country Dance and music by training teachers, providing bespoke teaching materials and offering continuing development training for educators in the wider community.",
   tag: ["sport", "dancing"],
   price: 5,
   image: "https://ceilidhtree.co.uk/wp-content/uploads/2020/09/Ceilidh-dance-Dashing-white-sergeant-Ceilidh-Tree-scottish-1024x683.jpg",
@@ -181,7 +179,7 @@ scottish.save
 
 myo = Activity.create!(
   name: "MYOs crafts",
-  description: "MYO is the perfect space in London to get creative on your own or with friends, family and co-workers - by providing the know-how, equipment, environment and materials for you to do so. Guests can come and enjoy decoupage, painting, sketching, ceramic painting, jewellery making, embroidery, t-shirt / canvas bag design, paper crafts every night of the week. On Tuesday nights visiting artists and professors give lectures on a variety of subjects, from color theory to moldmaking. Saturday nights involve the more standard Paint & Sip craze, and Thursday MYOs is the best place in town for pottery wheel lessons. Please check our website for the class and lecture schedule. The venue is also available for private parties upon request. ",
+  description: "MYO is the perfect space in London to get creative on your own or with friends, family and co-workers - by providing the know-how, equipment, environment and materials for you to do so. Guests can come and enjoy decoupage, painting, sketching, ceramic painting, jewellery making, embroidery, t-shirt / canvas bag design, paper crafts every night of the week. On Tuesday nights visiting artists and professors give lectures on a variety of subjects, from color theory to moldmaking.",
   tag: ["art", "crafts"],
   price: 10,
   image: "https://cdn.britannica.com/88/132288-050-74505F78/Pottery-people-clay-Hohokam-designs.jpg",
