@@ -21,6 +21,18 @@
     </div>
   </div>
 
+  <div>
+    <a style="cursor: pointer" class="social-sharing-button button-edit btn-open">Edit Account</a>
+
+    <div class="overlay hidden"></div>
+    <section class="modal modal-edit hidden">
+    <div class="profile-container">
+      <div class="x-container">
+        <h2>Edit <%= resource_name.to_s.humanize %></h2>
+        <button class="btn-close"></button>
+      </div>
+  </div>
+
   <div class="likes-container">
     <h2>My Activities</h2>
 
@@ -42,7 +54,30 @@
       <% end %>
     </div>
 
+        <%= f.input :new_password,
+                    hint: "leave it blank if you don't want to change it",
+                    required: false,
+                    input_html: { autocomplete: "new-password" } %>
+        <%= f.input :new_password_confirmation,
+                    required: false,
+                    input_html: { autocomplete: "new-password" } %>
+        <%= f.input :current_password,
+                    hint: "we need your current password to confirm your changes",
+                    required: true,
+                    input_html: { autocomplete: "current-password" } %>
+      </div>
+
+      <div class="form-actions">
+        <%= submit_tag "Update", class: "button-main" %>
+      </div>
+    <% end %>
+
+      <%= button_to "   Cancel account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "button-secondary fa-solid fa-trash" %>
+
+    <%= link_to "Back", :back %>
+
   </div>
+  </section>
 </div>
 
 <div class="profile-container">
